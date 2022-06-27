@@ -1,5 +1,5 @@
 spec_version: 2
-description: Auto generated blueprint for terraform module eks-cluster
+description: EKS cluster
 # blueprint inputs can be provided by the user, API or CI plugin when creating an environment from this blueprint.
 inputs:
   region:
@@ -37,8 +37,7 @@ grains:
     kind: terraform
     spec:
       source:
-        store: terraform-samples
-        path: eks-cluster
+        path: https://github.com/dreckguy/terraform-samples/tree/main/eks-cluster
       host:
       # Execution Host - the platform where the asset executable will run.
       # For example, a Kubernetes cluster can be used as an execution host.
