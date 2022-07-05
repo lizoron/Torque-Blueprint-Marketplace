@@ -37,7 +37,9 @@ grains:
     kind: terraform
     spec:
       source:
-        path: https://github.com/dreckguy/terraform-samples/tree/main/eks-cluster
+        path: github.com/dreckguy/terraform-samples.git//eks-cluster
+
+
       host:
       # Execution Host - the platform where the asset executable will run.
       # For example, a Kubernetes cluster can be used as an execution host.
@@ -66,4 +68,4 @@ grains:
       tags:
         auto-tag: false
     # The terraform version that will be used to deploy the module
-    tf-version: 1.2.3
+    tf-version: 1.2.4
