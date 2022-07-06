@@ -3,6 +3,7 @@ description: EKS cluster
 
 inputs:
   region:
+    type: string
     display-style: normal
     default: us-east-2
   host_name:
