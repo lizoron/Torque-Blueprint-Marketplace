@@ -1,6 +1,5 @@
 spec_version: 2
 description: EKS cluster
-
 inputs:
   region:
     type: string
@@ -9,7 +8,6 @@ inputs:
   host_name:
     type: string
     display-style: normal
-
 outputs:
   account_id:
     value: '{{ .grains.eks-cluster.outputs.account_id }}'
@@ -33,35 +31,29 @@ outputs:
     value: '{{ .grains.eks-cluster.outputs.kubectl_config }}'
   region:
     value: '{{ .grains.eks-cluster.outputs.region }}'
-
 grains:
   eks-cluster:
     kind: terraform
     spec:
       source:
         path: github.com/dreckguy/terraform-samples.git//eks-cluster
-
       host:
         name: '{{ .inputs.host_name }}'
         service-account: eks-cluster-creator
-
       inputs:
-      - region: '{{ .inputs.region }}'
-
+        - region: '{{ .inputs.region }}'
       outputs:
-      - account_id
-      - caller_arn
-      - caller_user
-      - caller_username
-      - cluster_endpoint
-      - cluster_id
-      - cluster_name
-      - cluster_security_group_id
-      - config_map_aws_auth
-      - kubectl_config
-      - region
-      
+        - account_id
+        - caller_arn
+        - caller_user
+        - caller_username
+        - cluster_endpoint
+        - cluster_id
+        - cluster_name
+        - cluster_security_group_id
+        - config_map_aws_auth
+        - kubectl_config
+        - region
       tags:
         auto-tag: false
-
     tf-version: 1.2.4
