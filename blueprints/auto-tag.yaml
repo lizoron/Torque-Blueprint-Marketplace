@@ -1,0 +1,59 @@
+spec_version: 2
+description: EKS cluster
+inputs:
+  region:
+    type: string
+    display-style: normal
+    default: us-east-2
+  host_name:
+    type: string
+    display-style: normal
+outputs:
+  account_id:
+    value: '{{ .grains.eks-cluster.outputs.account_id }}'
+  caller_arn:
+    value: '{{ .grains.eks-cluster.outputs.caller_arn }}'
+  caller_user:
+    value: '{{ .grains.eks-cluster.outputs.caller_user }}'
+  caller_username:
+    value: '{{ .grains.eks-cluster.outputs.caller_username }}'
+  cluster_endpoint:
+    value: '{{ .grains.eks-cluster.outputs.cluster_endpoint }}'
+  cluster_id:
+    value: '{{ .grains.eks-cluster.outputs.cluster_id }}'
+  cluster_name:
+    value: '{{ .grains.eks-cluster.outputs.cluster_name }}'
+  cluster_security_group_id:
+    value: '{{ .grains.eks-cluster.outputs.cluster_security_group_id }}'
+  config_map_aws_auth:
+    value: '{{ .grains.eks-cluster.outputs.config_map_aws_auth }}'
+  kubectl_config:
+    value: '{{ .grains.eks-cluster.outputs.kubectl_config }}'
+  region:
+    value: '{{ .grains.eks-cluster.outputs.region }}'
+grains:
+  eks-cluster:
+    kind: terraform
+    spec:
+      source:
+        path: github.com/dreckguy/terraform-samples.git//eks-cluster
+      host:
+        name: '{{ .inputs.host_name }}'
+        service-account: eks-cluster-creator
+      inputs:
+        - region: '{{ .inputs.region }}'
+      outputs:
+        - account_id
+        - caller_arn
+        - caller_user
+        - caller_username
+        - cluster_endpoint
+        - cluster_id
+        - cluster_name
+        - cluster_security_group_id
+        - config_map_aws_auth
+        - kubectl_config
+        - region
+      tags:
+        auto-tag: true
+    tf-version: 1.2.4
