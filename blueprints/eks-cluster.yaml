@@ -9,14 +9,6 @@ inputs:
     type: string
     display-style: normal
 outputs:
-  account_id:
-    value: '{{ .grains.eks-cluster.outputs.account_id }}'
-  caller_arn:
-    value: '{{ .grains.eks-cluster.outputs.caller_arn }}'
-  caller_user:
-    value: '{{ .grains.eks-cluster.outputs.caller_user }}'
-  caller_username:
-    value: '{{ .grains.eks-cluster.outputs.caller_username }}'
   cluster_endpoint:
     value: '{{ .grains.eks-cluster.outputs.cluster_endpoint }}'
   cluster_id:
