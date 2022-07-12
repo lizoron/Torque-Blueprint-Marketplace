@@ -36,7 +36,7 @@ grains:
     kind: terraform
     spec:
       source:
-        path: github.com/dreckguy/terraform-samples.git//eks-cluster
+        path: ../terraform-modules/eks-cluster
       host:
         name: '{{ .inputs.host_name }}'
         service-account: eks-cluster-creator
