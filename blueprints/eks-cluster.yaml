@@ -36,7 +36,7 @@ grains:
     kind: terraform
     spec:
       source:
-        path: ../terraform-modules/eks-cluster
+        path: file://../terraform-modules/eks-cluster
       host:
         name: '{{ .inputs.host_name }}'
         service-account: eks-cluster-creator

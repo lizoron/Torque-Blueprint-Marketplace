@@ -4,7 +4,7 @@ module "eks" {
   cluster_name    = local.cluster_name
   cluster_version = "1.22"
   subnets         = module.vpc.private_subnets
-
+  
   vpc_id = module.vpc.vpc_id
 
   node_groups_defaults = {
@@ -22,24 +22,6 @@ module "eks" {
       capacity_type  = "ON_DEMAND"
     }
   }
-
- map_roles = [{
-      rolearn  = "arn:aws:iam::799617105972:role/AWSReservedSSO_QualiPowerUsers_98e23796b015111f"
-      username = "QualiPowerUsers"
-      groups   = ["system:masters"]
-    },
-     {
-      rolearn = "arn:aws:iam::799617105972:role/qualidev2-eks2022040515083343910000000b"
-      username = "qualidev2-eks2022040515083343910000000b"
-      groups   = ["system:masters"]
-
-      }] 
-
-  map_users = [{
-      userarn  = "arn:aws:iam::799617105972:user/cleanser"
-      username = "cleanser"
-      groups   = ["system:masters"]
-    }]
 }
 
 data "aws_eks_cluster" "cluster" {
