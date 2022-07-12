@@ -36,7 +36,7 @@ grains:
     kind: terraform
     spec:
       source:
-        path: https://github.com/QualiTorque/TFSamples/tree/main/terraform-modules/eks-cluster
+        path: https://github.com/QualiTorque/TFSamples.git//terraform-modules/eks-cluster
       host:
         name: '{{ .inputs.host_name }}'
         service-account: eks-cluster-creator
