@@ -20,5 +20,14 @@ resource "aws_subnet" "AppSubnet1" {
     vpc_id = aws_vpc.VPC.id
 }
 
+resource "aws_subnet" "MngSubnet" {
+    cidr_block = "10.0.3.0/24"
+    map_public_ip_on_launch = true
+    tags = {"Key": "Name","Value": "mng-subnet"}
+    vpc_id = aws_vpc.VPC.id
+    
+  
+}
+
 
 
