@@ -3,4 +3,5 @@ resource "aws_route53_record" "DNSRecordjavaspringwebsite" {
   name    = "java-spring-website.2fg86qzvop02c2.sandbox.com"
   type    = "A"
   ttl     = 20
+  records = ["1.2.3.4"]
 }
