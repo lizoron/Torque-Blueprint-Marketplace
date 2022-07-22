@@ -38,7 +38,7 @@ resource "aws_security_group" "javaspringwebsiteSG" {
         cidr_blocks = ["0.0.0.0/0"]
         from_port = 8080
         protocol = "tcp"
-        //security_groups = [aws_security_group.MainALBSG.id]
+        security_groups = [aws_security_group.MainALBSG.id,aws_security_group.DefaultSandboxSG.id]
         to_port = 8080
         description = "from LB"
         ipv6_cidr_blocks = []
