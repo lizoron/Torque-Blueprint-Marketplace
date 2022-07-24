@@ -10,6 +10,8 @@ inputs:
 outputs:
   URL:
     value: '{{ .grains.spec1-sample.outputs.endpoint }}'
+    kind: link
+
 grains:
   spec1-sample:
     kind: terraform
