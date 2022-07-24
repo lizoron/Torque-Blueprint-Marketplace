@@ -7,6 +7,9 @@ inputs:
   host_name:
     type: string
     default: eks
+outputs:
+  URL:
+    value: '{{ .grains.spec1-sample.outputs.endpoint }}'
 grains:
   spec1-sample:
     kind: terraform
@@ -17,10 +20,7 @@ grains:
         name: '{{ .inputs.host_name }}'
         service-account: torque-app-creator
       inputs:
-      - aws_region: '{{ .inputs.aws_region }}'     
-    tf-version: 1.2.5
+      - aws_region: '{{ .inputs.aws_region }}'
       outputs:
-        - endpoint
-outputs:
-  URL:
-    value: '{{ .grains.spec1-sample.outputs.endpoint }}'
+        - endpoint     
+    tf-version: 1.2.5
