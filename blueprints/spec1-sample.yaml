@@ -2,30 +2,23 @@ spec_version: 2
 description: Auto generated blueprint for terraform module spec1-sample
 # blueprint inputs can be provided by the user, API or CI plugin when creating an environment from this blueprint.
 inputs:
-  - aws_region:
+  aws_region:
     default: eu-west-1
-  - host_name:
+  host_name:
     type: string
     default: eks
-outputs: {}
 grains:
   spec1-sample:
     kind: terraform
     spec:
       source:
-        store: Terraform-modules
-        path: terraform-modules/spec1-sample
+        path: github.com/qualitorque/tfsamples.git//terraform-modules/spec1-sample
       host:
         name: '{{ .inputs.host_name }}'
         service-account: torque-app-creator
       inputs:
       - aws_region: '{{ .inputs.aws_region }}'
-      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
-      # env-vars:
-      # - VAR_NAME: var value
       env-vars: []
       outputs: []
-      # Ansible inventory file in a YAML format
-      inventory-file: ''
-    # The terraform version that will be used to deploy the module
+     
     tf-version: 1.2.5
