@@ -5,7 +5,7 @@
             "Sid": "Creator",
             "Effect": "Allow",
             "Action": [
-                
+                "route53:CreateHostedZone"
             ],
             "Resource": "*"
         }
