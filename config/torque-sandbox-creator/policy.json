@@ -2,15 +2,11 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "Creator",
+            "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "route53:CreateHostedZone",
-                "ec2:DescribeAvailabilityZones",
-                "ec2:CreateKeyPair",
-                "ec2:DescribeKeyPairs",
-                "ec2:ImportKeyPair",
-                "ec2:CreateVpc"
+                "ec2:*",
+                "elasticloadbalancing:*"
             ],
             "Resource": "*"
         }
