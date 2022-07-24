@@ -1,5 +1,4 @@
 resource "aws_instance" "javaspringwebsite" {
-depends_on = [aws_route53_record.DNSRecordjavaspringwebsite]
 ami = "ami-f90a4880"
 instance_type = "t2.nano"
 key_name = aws_key_pair.key.key_name
