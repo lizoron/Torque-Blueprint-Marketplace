@@ -4,9 +4,9 @@ description: Auto generated blueprint for terraform module spec1-sample
 inputs:
   - aws_region:
     default: eu-west-1
-  host_name:
+  - host_name:
     type: string
-# blueprint outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
+    default: eks
 outputs: {}
 grains:
   spec1-sample:
