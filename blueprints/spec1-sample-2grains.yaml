@@ -2,11 +2,12 @@ spec_version: 2
 description: Spec1 sample blueprint created with spec2 using Terraform
 # blueprint inputs can be provided by the user, API or CI plugin when creating an environment from this blueprint.
 inputs:
-  host_name:
+  - host_name:
     type: string
     allowed_values:
       - eks
     default: eks
+  - application_port: 8080
 outputs:
   URL:
     value: '{{ .grains.infra.outputs.endpoint }}'
@@ -21,6 +22,8 @@ grains:
       host:
         name: '{{ .inputs.host_name }}'
         service-account: torque-sandbox-creator
+      inputs:
+        - application_port: '{{inputs.application_port}}'
       outputs:
         - endpoint     
     tf-version: 1.2.5
@@ -31,5 +34,7 @@ grains:
         path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-application
       host:
         name: '{{ .inputs.host_name }}'
+        inputs:
+        - application_port: '{{inputs.application_port}}'
         service-account: torque-sandbox-creator
     tf-version: 1.2.5
