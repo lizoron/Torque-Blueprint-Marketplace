@@ -35,7 +35,5 @@ grains:
         name: '{{ .inputs.host_name }}'
         service-account: torque-sandbox-creator
       inputs:
-      - aws_region: '{{ .inputs.aws_region }}'
-      outputs:
-        - endpoint     
+      - aws_region: '{{ .inputs.aws_region }}'   
     tf-version: 1.2.5
