@@ -7,7 +7,7 @@ inputs:
     allowed_values:
       - eks
     default: eks
-  application_port: 8080
+  application_port: '8080'
 outputs:
   URL:
     value: '{{ .grains.infra.outputs.endpoint }}'
