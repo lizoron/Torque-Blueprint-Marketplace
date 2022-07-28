@@ -20,7 +20,7 @@ grains:
         path: github.com/qualitorque/tfsamples.git//terraform-modules/spec1-sample
       host:
         name: '{{ .inputs.host_name }}'
-        service-account: torque-sandbox-creator
+        service-account: torque-app-creator
       inputs:
       - aws_region: '{{ .inputs.aws_region }}'
       outputs:

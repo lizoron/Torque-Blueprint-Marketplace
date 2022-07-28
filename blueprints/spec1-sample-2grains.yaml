@@ -9,7 +9,7 @@ inputs:
     default: eks
 outputs:
   URL:
-    value: '{{ .grains.spec1-sample.outputs.endpoint }}'
+    value: '{{ .grains.infra.outputs.endpoint }}'
     kind: link
 
 grains:
@@ -20,7 +20,20 @@ grains:
         path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-infra
       host:
         name: '{{ .inputs.host_name }}'
-        service-account: torque-app-creator
+        service-account: torque-sandbox-creator
+      inputs:
+      - aws_region: '{{ .inputs.aws_region }}'
+      outputs:
+        - endpoint     
+    tf-version: 1.2.5
+  application:
+    kind: terraform
+    spec:
+      source:
+        path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-application
+      host:
+        name: '{{ .inputs.host_name }}'
+        service-account: torque-sandbox-creator
       inputs:
       - aws_region: '{{ .inputs.aws_region }}'
       outputs:
