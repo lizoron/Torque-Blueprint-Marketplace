@@ -2,12 +2,12 @@ spec_version: 2
 description: Spec1 sample blueprint created with spec2 using Terraform
 # blueprint inputs can be provided by the user, API or CI plugin when creating an environment from this blueprint.
 inputs:
-  - host_name:
+  host_name:
     type: string
     allowed_values:
       - eks
     default: eks
-  - application_port: 8080
+  application_port: 8080
 outputs:
   URL:
     value: '{{ .grains.infra.outputs.endpoint }}'
