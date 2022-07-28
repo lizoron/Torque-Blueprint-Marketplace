@@ -27,7 +27,11 @@ grains:
       inputs:
         - application_port: '{{inputs.application_port}}'
       outputs:
-        - endpoint     
+        - vpc
+        - subnets
+        - ec2_key
+        - load_balancer_security_group
+        - default_sandbox_security_group
     tf-version: 1.2.5
   application:
     kind: terraform
@@ -37,7 +41,10 @@ grains:
       host:
         name: '{{ .inputs.host_name }}'
         service-account: torque-sandbox-creator
-        inputs:
+      inputs:
         - application_port: '{{inputs.application_port}}'
         - vpc: '{{.grains.infra.outputs.vpc}}'
+        - subnet: '{{grains.infra.outputs.subnets[0]}}'
+        - load_balancer_security_group: '{{.grains.infra.outputs.load_balancer_security_group}}'
+        - default_sandbox_security_group: '{{.grains.infra.outputs.default_sandbox_security_group}}'
     tf-version: 1.2.5
