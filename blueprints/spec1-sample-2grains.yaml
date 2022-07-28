@@ -4,6 +4,9 @@ description: Spec1 sample blueprint created with spec2 using Terraform
 inputs:
   host_name:
     type: execution-host
+    allowed_values:
+      - eks
+    default: eks
   application_port:
     type: string
     default: 8080
