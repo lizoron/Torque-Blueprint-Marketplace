@@ -26,7 +26,7 @@ grains:
         service-account: torque-sandbox-creator
       inputs:
         - application_port: '{{inputs.application_port}}'
-        - instance_id: '{{grains.application.instance_id}}'
+        - instance_id: '{{grains.application.outputs.instance_id}}'
       outputs:
         - vpc
         - subnets
