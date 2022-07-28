@@ -36,7 +36,8 @@ grains:
         path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-application
       host:
         name: '{{ .inputs.host_name }}'
+        service-account: torque-sandbox-creator
         inputs:
         - application_port: '{{inputs.application_port}}'
-        service-account: torque-sandbox-creator
+        - vpc: '{{.grains.infra.outputs.vpc}}'
     tf-version: 1.2.5
