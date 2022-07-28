@@ -18,6 +18,8 @@ outputs:
 grains:
   infra:
     kind: terraform
+    depends-on: application
+
     spec:
       source:
         path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-infra
@@ -37,6 +39,7 @@ grains:
     tf-version: 1.2.5
   application:
     kind: terraform
+    depends-on: infra
     spec:
       source:
         path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-application
