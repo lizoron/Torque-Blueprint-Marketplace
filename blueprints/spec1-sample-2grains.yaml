@@ -42,6 +42,7 @@ grains:
         name: '{{ .inputs.host_name }}'
         service-account: torque-sandbox-creator
       inputs:
+        - ec2_key: '{{module.infra.ec2_key}}'
         - application_port: '{{inputs.application_port}}'
         - vpc: '{{.grains.infra.outputs.vpc}}'
         - subnet: '{{grains.infra.outputs.subnets[0]}}'
