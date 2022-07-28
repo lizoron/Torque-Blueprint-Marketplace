@@ -1,5 +1,5 @@
-resource "aws_security_group" "javaspringwebsiteSG" {
-    name = "javaspringwebsite"
+resource "aws_security_group" "applicationSG" {
+    name = "torque-application"
     description = "java-spring-website Security Group"
     egress {
     from_port        = 0
@@ -10,14 +10,14 @@ resource "aws_security_group" "javaspringwebsiteSG" {
   }
     ingress {
         cidr_blocks = ["0.0.0.0/0"]
-        from_port = 8080
+        from_port = var.application_port
         protocol = "tcp"
-        security_groups = [aws_security_group.MainALBSG.id,aws_security_group.DefaultSandboxSG.id]
-        to_port = 8080
-        description = "from LB"
+        security_groups =[var.load_balancer_security_group,var.default_sandbox_security_group]
+        to_port = var.application_port
+        description = "open application port"
         ipv6_cidr_blocks = []
         prefix_list_ids = []
         self = false
     }
-    vpc_id = aws_vpc.VPC.id
+    vpc_id = var.vpc
 }
