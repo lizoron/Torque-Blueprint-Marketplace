@@ -13,11 +13,11 @@ outputs:
     kind: link
 
 grains:
-  spec1-sample:
+  infra:
     kind: terraform
     spec:
       source:
-        path: github.com/qualitorque/tfsamples.git//terraform-modules/spec1-sample
+        path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-infra
       host:
         name: '{{ .inputs.host_name }}'
         service-account: torque-app-creator
