@@ -5,8 +5,8 @@ inputs:
   host_name:
     type: execution-host
   application_port:
-  type: string
-  default: 8080
+    type: string
+    default: 8080
 outputs:
   URL:
     value: '{{ .grains.infra.outputs.endpoint }}'
