@@ -12,7 +12,7 @@ inputs:
     default: 8080
 outputs:
   URL:
-    value: '{{ .grains.infra.outputs.endpoint }}'
+    value: '{{ .grains.infra.outputs.load_balancer_url }}'
     kind: link
 
 grains:
@@ -26,12 +26,14 @@ grains:
         service-account: torque-sandbox-creator
       inputs:
         - application_port: '{{inputs.application_port}}'
+        - instance_id: '{{module.application.instance_id}}'
       outputs:
         - vpc
         - subnets
         - ec2_key
         - load_balancer_security_group
         - default_sandbox_security_group
+        - load_balancer_url
     tf-version: 1.2.5
   application:
     kind: terraform
