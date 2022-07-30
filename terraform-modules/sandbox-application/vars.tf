@@ -7,7 +7,6 @@ variable "default_sandbox_security_group" {
 }
 
 variable "subnets" {
-  type = list(string)  
 }
 
 locals {
