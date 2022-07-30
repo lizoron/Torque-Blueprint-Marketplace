@@ -1,7 +1,8 @@
+
 resource "aws_elb" "MainALB" {
   internal = false
   security_groups = [aws_security_group.MainALBSG.id]
-  subnets   = var.subnets
+  subnets   = local.subnets
   instances = [aws_instance.application.id]
 
 listener {

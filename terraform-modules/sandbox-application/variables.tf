@@ -12,5 +12,10 @@ variable "vpc" {
 }
 
 locals {
+}
+
+locals{
   application_port = 8080
+  subnets = split(var.subnets,",")
+  subnet0 = element(local.subnets,0)
 }
