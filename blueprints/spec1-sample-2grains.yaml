@@ -27,3 +27,19 @@ grains:
         - ec2_key
         - default_sandbox_security_group
     tf-version: 1.2.5
+  application:
+    kind: terraform
+    spec:
+      source:
+        path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-application
+      host:
+        name: '{{ .inputs.host_name }}'
+        service-account: torque-sandbox-creator
+      inputs:
+        - vpc: '{{grains.infra.outputs.vpc}}'
+        - subnets: '{{grains.infra.outputs.subnets}}'
+        - ec2_key: '{{grains.infra.outputs.ec2_key}}'
+        - default_sandbox_security_group: '{{grains.infra.outputs.default_sandbox_security_group}}'
+      outputs:
+        - load_balancer_url
+    tf-version: 1.2.5
