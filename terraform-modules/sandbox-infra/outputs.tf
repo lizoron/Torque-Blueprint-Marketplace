@@ -1,5 +1,4 @@
 output "subnets" {
-    type = list(string)
     value = [aws_subnet.AppSubnet0.id,aws_subnet.AppSubnet1.id]
 }
 
