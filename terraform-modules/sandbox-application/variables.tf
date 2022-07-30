@@ -1,4 +1,5 @@
 variable "subnets" {
+  type = list(string)
 }
 
 variable "ec2_key" {
