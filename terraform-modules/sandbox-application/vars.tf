@@ -6,9 +6,7 @@ variable "default_sandbox_security_group" {
     description = "security group id attached to all sandbox applications"
 }
 
-variable "subnets" {
-  type = list(string)
-  
+variable "subnets" {  
 }
 
 locals {
