@@ -1,3 +1,3 @@
 output "endpont" {
-    value = module.infra.load_balancer_url
+    value = module.application.load_balancer_url
 }
