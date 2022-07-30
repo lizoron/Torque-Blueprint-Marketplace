@@ -11,7 +11,9 @@ inputs:
     type: string
     default: 8080
 outputs:
-  URL: '{{grains.application.outputs.load_balancer_url}}'
+  URL: 
+    value: '{{grains.application.outputs.load_balancer_url}}'
+    kind: link
 grains:
   infra:
     kind: terraform
