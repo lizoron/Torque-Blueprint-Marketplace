@@ -7,9 +7,6 @@ inputs:
     allowed_values:
       - eks
     default: eks
-  application_port:
-    type: string
-    default: 8080
 outputs:
   URL: 
     value: '{{grains.application.outputs.load_balancer_url}}'
