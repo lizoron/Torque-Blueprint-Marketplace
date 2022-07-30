@@ -7,12 +7,9 @@ inputs:
     allowed_values:
       - eks
     default: eks
-  application_port:
-    type: string
-    default: 8080
 outputs:
   URL:
-    value: '{{ .grains.infra.outputs.load_balancer_url }}'
+    value: '{{ .grains.application.outputs.load_balancer_url }}'
     kind: link
 
 grains:
@@ -27,15 +24,9 @@ grains:
         name: '{{ .inputs.host_name }}'
         service-account: torque-sandbox-creator
       inputs:
-        - application_port: '{{inputs.application_port}}'
-        - instance_id: '{{grains.application.outputs.instance_id}}'
       outputs:
-        - vpc
-        - subnets
-        - ec2_key
-        - load_balancer_security_group
-        - default_sandbox_security_group
-        - load_balancer_url
+      - default_sandbox_security_group
+       
     tf-version: 1.2.5
   application:
     kind: terraform
@@ -47,12 +38,7 @@ grains:
         name: '{{ .inputs.host_name }}'
         service-account: torque-sandbox-creator
       inputs:
-        - ec2_key: '{{grains.infra.outputs.ec2_key}}'
-        - application_port: '{{inputs.application_port}}'
-        - vpc: '{{.grains.infra.outputs.vpc}}'
-        - subnet: '{{grains.infra.outputs.subnets[0]}}'
-        - load_balancer_security_group: '{{.grains.infra.outputs.load_balancer_security_group}}'
         - default_sandbox_security_group: '{{.grains.infra.outputs.default_sandbox_security_group}}'
       outputs:
-        - instance_id
+        - load_balancer_url
     tf-version: 1.2.5
