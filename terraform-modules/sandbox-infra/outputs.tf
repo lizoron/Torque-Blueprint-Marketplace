@@ -1,5 +1,5 @@
 output "subnets" {
-    value = "[${aws_subnet.AppSubnet0.id},${aws_subnet.AppSubnet1.id}]"
+    value = "${aws_subnet.AppSubnet0.id},${aws_subnet.AppSubnet1.id}"
 }
 
 output "ec2_key" {
