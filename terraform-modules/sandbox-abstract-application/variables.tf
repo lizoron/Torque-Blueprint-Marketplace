@@ -1,3 +1,23 @@
+variable "application_port"{
+}
+
+variable "ami" {
+}
+variable "instance_type" {
+}
+
+variable "user_data" {
+  type = string
+  default = ""
+}
+
+variable "application_name" {  
+}
+
+variable "expose" {
+  default = false
+}
+
 variable "subnets" {
 }
 
@@ -12,7 +32,8 @@ variable "vpc" {
 }
 
 locals{
-  application_port = 8080
+  private_ipv4_address = "10.0.0.230"
   subnets = split(",",var.subnets)
   subnet0 = element(local.subnets,0)
+  subnet1 = element(local.subnets,1)
 }

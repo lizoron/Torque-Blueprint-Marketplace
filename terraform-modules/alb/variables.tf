@@ -8,7 +8,7 @@ variable "allowed_cidr" {
 }
 
 variable "application_port" {
-    default = 80
+    //default = 80
 }
 
 variable "subnets" {
