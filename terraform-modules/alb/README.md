@@ -1,5 +1,5 @@
 # ALB module
-Application load balancer connected to existing EC2 instance
+Application load balancer connected to an existing EC2 instance
 ## requirements
 - VPC
 - 2 subnets
