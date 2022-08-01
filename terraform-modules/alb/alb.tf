@@ -40,8 +40,3 @@ resource "aws_lb_target_group_attachment" "test" {
   target_id        = var.instance_id
   port             = var.application_port
 }
-
-
-output "alb_endpoint" {
-    value = "${aws_lb.test.dns_name}:${var.application_port}"
-}
