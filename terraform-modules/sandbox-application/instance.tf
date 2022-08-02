@@ -7,6 +7,6 @@ network_interface {
   device_index = 0
 }
 
-  tags {Name = var.application_name}
+  tags = {Name = var.application_name}
 	user_data = var.user_data
 }
