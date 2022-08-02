@@ -7,7 +7,9 @@ inputs:
     allowed_values:
       - eks
     default: eks
-outputs:
+  ami:
+  instance_type:
+
   
 grains:
   infra:
@@ -35,8 +37,8 @@ grains:
         service-account: torque-sandbox-creator
       inputs:
         - application_name: "VM"
-        - ami: ami-f90a4880
-        - instance_type: t2.nano
+        - ami: '{{.inputs.ami}}'
+        - instance_type: '{{.inputs.instance_type}}'
         - subnets: '{{grains.infra.outputs.subnets}}'
         - ec2_key: '{{grains.infra.outputs.ec2_key}}'
         - default_sandbox_security_group: '{{grains.infra.outputs.default_sandbox_security_group}}'
