@@ -1,3 +1,3 @@
 output "load_balancer_url" {
-    value = "${aws_elb.MainALB.dns_name}:${local.application_port}"
+    value = var.expose ? "${aws_elb.ALB[0].dns_name}:${var.application_port}" : null
 }

@@ -1,6 +1,21 @@
-variable "subnets" {
+variable "application_port"{
+}
+variable "ami" {
+}
+variable "instance_type" {
+}
+variable "user_data" {
+  type = string
+  default = ""
+}
+variable "application_name" {  
+}
+variable "expose" {
+  default = false
 }
 
+variable "subnets" {
+}
 variable "ec2_key" {
     description = "keypair name to use for the instance"
 }
@@ -12,7 +27,7 @@ variable "vpc" {
 }
 
 locals{
-  application_port = 8080
   subnets = split(",",var.subnets)
   subnet0 = element(local.subnets,0)
+  subnet1 = element(local.subnets,1)
 }

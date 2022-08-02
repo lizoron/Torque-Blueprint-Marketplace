@@ -1,6 +1,6 @@
-resource "aws_security_group" "MainALBSG" {
-    name = "lb"
-    description = "Attaching an empty security group to the ALB to give instances an access"
+resource "aws_security_group" "ALBSG" {
+    name = "${var.application_name}-lb"
+    description = "Attaching a security group to the ALB to give instances a public access"
     egress {
         from_port        = 0
         to_port          = 0
@@ -11,16 +11,16 @@ resource "aws_security_group" "MainALBSG" {
     ingress {
         cidr_blocks = ["0.0.0.0/0"]
         description = "public port access"
-        from_port = local.application_port
+        from_port = var.application_port
         protocol = "tcp"
-        to_port = local.application_port
+        to_port = var.application_port
         ipv6_cidr_blocks = []
         prefix_list_ids = []
         security_groups = []
         self = false
     }
 
-tags = {"Key": "Name","Value": "MainALBSG"}
+tags = {"Key": "Name","Value": "ALBSG"}
 vpc_id = var.vpc
 }
 
@@ -28,8 +28,8 @@ vpc_id = var.vpc
 
 
 resource "aws_security_group" "applicationSG" {
-    name = "torque-application"
-    description = "java-spring-website Security Group"
+    name = "${var.application_name}-sg"
+    description = "${var.application_name} Security Group"
     egress {
     from_port        = 0
     to_port          = 0
@@ -38,12 +38,11 @@ resource "aws_security_group" "applicationSG" {
     ipv6_cidr_blocks = ["::/0"]
   }
     ingress {
-        cidr_blocks = ["0.0.0.0/0"]
-        from_port = local.application_port
+        from_port = var.application_port
         protocol = "tcp"
-        security_groups =[aws_security_group.MainALBSG.id,var.default_sandbox_security_group]
-        to_port = local.application_port
-        description = "open application port"
+        security_groups =[var.default_sandbox_security_group]
+        to_port = var.application_port
+        description = "open application port within the sandbox"
         ipv6_cidr_blocks = []
         prefix_list_ids = []
         self = false
