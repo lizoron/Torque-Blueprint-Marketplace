@@ -9,3 +9,7 @@ variable "default_sandbox_security_group" {
 }
 variable "vpc" {
 }
+
+variable "insecure" {
+  
+}

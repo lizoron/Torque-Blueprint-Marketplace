@@ -16,8 +16,7 @@ variable "expose" {
 }
 
 variable "insecure" {
-  default = false
-  
+  default = false 
 }
 
 variable "subnets" {

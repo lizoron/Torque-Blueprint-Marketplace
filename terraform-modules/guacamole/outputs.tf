@@ -1,3 +1,3 @@
 output "endpoint" {
-    value = module.application.load_balancer_url
+    value = module.application.public_ip
 }
