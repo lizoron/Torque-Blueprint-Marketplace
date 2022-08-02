@@ -1,3 +1,3 @@
 output "application" {
-    value = module.java_spring.endpoint
+    value = module.vm.load_balancer_url
 }

@@ -1,4 +1,5 @@
 variable "application_port"{
+  default = 80
 }
 variable "ami" {
 }
