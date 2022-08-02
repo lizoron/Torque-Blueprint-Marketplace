@@ -38,10 +38,10 @@ resource "aws_security_group" "applicationSG" {
     ipv6_cidr_blocks = ["::/0"]
   }
     ingress {
-        from_port = var.application_port
-        protocol = "tcp"
+        from_port = 0
+        to_port   = 0
+        protocol  = "-1"
         security_groups =[var.default_sandbox_security_group]
-        to_port = var.application_port
         description = "open application port within the sandbox"
         ipv6_cidr_blocks = []
         prefix_list_ids = []

@@ -14,3 +14,11 @@ module "vm" {
     vpc = module.infra.vpc
 
 }
+
+module "guacamole" {
+    source = "../guacamole"
+    application_name = "guacamole"
+
+    ami = "ami-f90a4880"
+    instance_type = "t3.medium"
+}

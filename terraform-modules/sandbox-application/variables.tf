@@ -15,6 +15,11 @@ variable "expose" {
   default = false
 }
 
+variable "insecure" {
+  default = false
+  
+}
+
 variable "subnets" {
 }
 variable "ec2_key" {
