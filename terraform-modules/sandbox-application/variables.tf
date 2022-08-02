@@ -1,3 +1,5 @@
+variable "application_name" {  
+}
 variable "application_port"{
   default = 80
 }
@@ -8,8 +10,6 @@ variable "instance_type" {
 variable "user_data" {
   type = string
   default = ""
-}
-variable "application_name" {  
 }
 variable "expose" {
   default = false

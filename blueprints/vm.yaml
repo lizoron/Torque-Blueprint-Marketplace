@@ -8,9 +8,7 @@ inputs:
       - eks
     default: eks
 outputs:
-  URL: 
-    value: '{{grains.application.outputs.load_balancer_url}}'
-    kind: link
+  
 grains:
   infra:
     kind: terraform
@@ -26,7 +24,7 @@ grains:
         - default_sandbox_security_group
         - vpc
     tf-version: 1.2.5
-  application:
+  vm:
     kind: terraform
     depends-on: infra
     spec:
@@ -36,11 +34,12 @@ grains:
         name: '{{ .inputs.host_name }}'
         service-account: torque-sandbox-creator
       inputs:
+        - application_name: "VM"
+        - ami: ami-f90a4880
+        - instance_type: t2.nano
         - subnets: '{{grains.infra.outputs.subnets}}'
         - ec2_key: '{{grains.infra.outputs.ec2_key}}'
         - default_sandbox_security_group: '{{grains.infra.outputs.default_sandbox_security_group}}'
         - vpc: '{{grains.infra.outputs.vpc}}'
 
-      outputs:
-        - load_balancer_url
     tf-version: 1.2.5
