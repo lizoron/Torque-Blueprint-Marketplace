@@ -10,11 +10,11 @@ module "java_spring" {
     default_sandbox_security_group = module.infra.default_sandbox_security_group
     vpc = module.infra.vpc
     insecure = true
-
-
+    expose = true
+    application_port=8080
 }
 
-module "guacamole" {
+/*module "guacamole" {
     source = "../guacamole"
 
     subnets = module.infra.subnets
@@ -22,4 +22,4 @@ module "guacamole" {
     default_sandbox_security_group = module.infra.default_sandbox_security_group
     vpc = module.infra.vpc
 
-}
+}*/
