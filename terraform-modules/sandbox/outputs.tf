@@ -6,7 +6,7 @@ output private_ip{
     value = module.java_spring.private_ip
 }
 
-output guacamole_ip {
-    value = module.guacamole.endpoint
+output "public_ip" {
+    value = module.java_spring.public_ip
   
 }

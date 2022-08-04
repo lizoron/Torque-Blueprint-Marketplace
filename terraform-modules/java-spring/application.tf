@@ -6,6 +6,7 @@ module "application" {
     user_data = file("${path.module}/startup_script.sh")
     application_port = 8080
     expose = true
+    insecure = var.insecure
     
     subnets = var.subnets
     ec2_key = var.ec2_key

@@ -15,4 +15,6 @@ sudo systemctl status docker
 sudo usermod -aG docker ubuntu
 sudo apt install -y docker-compose
 
-
+#Install mysql client
+sudo apt-get update -y
+sudo apt-get install mysql-client

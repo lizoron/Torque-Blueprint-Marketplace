@@ -9,12 +9,13 @@ module "java_spring" {
     ec2_key = module.infra.ec2_key
     default_sandbox_security_group = module.infra.default_sandbox_security_group
     vpc = module.infra.vpc
+    insecure = true
+
 
 }
 
 module "guacamole" {
     source = "../guacamole"
-    insecure = true
 
     subnets = module.infra.subnets
     ec2_key = module.infra.ec2_key

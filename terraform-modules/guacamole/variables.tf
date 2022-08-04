@@ -11,5 +11,6 @@ variable "vpc" {
 }
 
 variable "insecure" {
+    default = false
   
 }
