@@ -1,4 +1,4 @@
-version: '3.8'
+version: '2'
 services:
   guacd:
     image: guacamole/guacd
@@ -28,4 +28,3 @@ services:
     - MYSQL_PASSWORD=guacamole
     - MYSQL_DATABASE=guacamole
     - MYSQL_ROOT_PASSWORD=root
-
