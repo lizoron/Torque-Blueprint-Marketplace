@@ -16,7 +16,7 @@ sudo usermod -aG docker ubuntu
 sudo apt install -y docker-compose
 
 #Run service
-wget https://github.com/QualiTorque/TFSamples/blob/main/resources/docker-compose.yaml
+wget https://raw.githubusercontent.com/QualiTorque/TFSamples/main/resources/docker-compose.yaml
 docker-compose up
 
 #Install mysql client
