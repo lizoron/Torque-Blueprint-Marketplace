@@ -4,6 +4,9 @@ module "application" {
     ami = "ami-0141514361b6a3c1b"
     instance_type = "t3.medium"
     user_data = file("${path.module}/startup_script.sh")
+    application_port = 8080
+    application_path = "guacamole/"
+    expose = true
     
     subnets = var.subnets
     ec2_key = var.ec2_key

@@ -3,6 +3,9 @@ variable "application_name" {
 variable "application_port"{
   default = 80
 }
+variable "application_path" {
+  default = ""
+}
 variable "ami" {
 }
 variable "instance_type" {

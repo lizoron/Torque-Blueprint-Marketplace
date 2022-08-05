@@ -14,12 +14,11 @@ listener {
   lb_port = var.application_port
 }
 
-health_check {
+  health_check {
     healthy_threshold   = 2
     unhealthy_threshold = 10
-    timeout             = 3
-    target              = "HTTP:${var.application_port}/"
     interval            = 5
+    timeout             = 3
+    target              = "HTTP:${var.application_port}/${var.application_path}"
   }
-
 }

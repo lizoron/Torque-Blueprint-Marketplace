@@ -9,7 +9,6 @@ module "java_spring" {
     ec2_key = module.infra.ec2_key
     default_sandbox_security_group = module.infra.default_sandbox_security_group
     vpc = module.infra.vpc
-    insecure = true
 }
 
 module "guacamole" {
@@ -19,9 +18,14 @@ module "guacamole" {
     ec2_key = module.infra.ec2_key
     default_sandbox_security_group = module.infra.default_sandbox_security_group
     vpc = module.infra.vpc
-    insecure = true
 }
 
 output "guacamole_public_ip" {
     value = module.guacamole.public_ip
+}
+
+output "guacamole_load_balancer_url" {
+    value = "http://${module.guacamole.load_balancer_url}"
+    
+  
 }

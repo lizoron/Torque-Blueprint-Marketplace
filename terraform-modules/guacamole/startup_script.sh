@@ -17,6 +17,7 @@ apt-get update -y
  #Get all needed files
 wget https://raw.githubusercontent.com/QualiTorque/TFSamples/main/resources/docker-compose.yaml
 wget https://raw.githubusercontent.com/QualiTorque/TFSamples/main/resources/initdb.sql
+
 #Install mysql client
 sudo apt-get update -y
 sudo apt-get install mysql-client -y
