@@ -1,7 +1,7 @@
 module "application" {
     source = "../sandbox-application"
     application_name = "java-spring"
-    ami = "ami-f90a4880"
+    ami = "ami-f90a4880" // Ubuntu 20.04
     instance_type = "t2.nano"
     user_data = file("${path.module}/startup_script.sh")
     application_port = 8080

@@ -19,8 +19,7 @@
 
 --
 -- Table of connection groups. Each connection group has a name.
---
-
+USE guacamole;
 CREATE TABLE `guacamole_connection_group` (
 
   `connection_group_id`   int(11)      NOT NULL AUTO_INCREMENT,
