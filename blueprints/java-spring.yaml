@@ -14,7 +14,7 @@ outputs:
   SSH Portal:
     value: '{{.grains.ssh-portal.outputs.endpoint}}'
     kind: link
-  private-ip:
+  Java-Spring private-ip:
     value: '{{.grains.java-spring.outputs.private_ip}}'
   # private-key:
   #   value: '{{.grains.infra.outputs.private_key}}'
