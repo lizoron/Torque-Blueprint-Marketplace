@@ -14,3 +14,7 @@ output "vpc" {
   value = aws_vpc.VPC.id
 }
 
+output "private_key" {
+  value = file("${path.module}/creds/torque_ec2_key.pem")
+}
+

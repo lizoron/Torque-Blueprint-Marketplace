@@ -1,12 +1,16 @@
-output "endpoint" {
+output "java_spring" {
     value = module.java_spring.endpoint
 }
 
-output vm_private_ip{
+output java_spring_private_ip{
     value = module.java_spring.private_ip
 }
 
-output "vm_public_ip" {
-    value = module.java_spring.public_ip
+output "guacamole"{
+        value = "http://${module.guacamole.endpoint}"
+}
+
+output "private_key" {
+    value = module.infra.private_key
   
 }

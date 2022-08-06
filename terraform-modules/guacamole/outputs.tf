@@ -2,8 +2,6 @@ output "public_ip" {
     value = module.application.public_ip
 }
 
-output "load_balancer_url" {
-
+output "endpoint" {
     value = module.application.load_balancer_url
-  
 }
