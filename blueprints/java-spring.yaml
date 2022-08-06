@@ -16,8 +16,8 @@ outputs:
     kind: link
   private-ip:
     value: '{{.grains.java-spring.outputs.private_ip}}'
-  private-key:
-    value: '{{.grains.infra.outputs.private_key}}'
+  # private-key:
+  #   value: '{{.grains.infra.outputs.private_key}}'
 grains:
   infra:
     kind: terraform
