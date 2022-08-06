@@ -12,7 +12,7 @@ outputs:
     value: '{{.grains.java-spring.outputs.endpoint}}'
     kind: link
   SSH Portal:
-    value: '{{.grains.guacamole.outputs.endpoint}}'
+    value: '{{.grains.ssh-portal.outputs.endpoint}}'
     kind: link
 grains:
   infra:
@@ -47,7 +47,7 @@ grains:
       outputs:
         - endpoint
     tf-version: 1.2.5
-  guacamole:
+  ssh-portal:
     kind: terraform
     depends-on: infra
     spec:
