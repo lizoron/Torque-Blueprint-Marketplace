@@ -40,6 +40,7 @@ grains:
         - ec2_key: '{{grains.infra.outputs.ec2_key}}'
         - default_sandbox_security_group: '{{grains.infra.outputs.default_sandbox_security_group}}'
         - vpc: '{{grains.infra.outputs.vpc}}'
-    tf-version: 1.2.5
       outputs:
         - endpoint
+    tf-version: 1.2.5
+  
