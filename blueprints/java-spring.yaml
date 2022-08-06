@@ -10,7 +10,7 @@ inputs:
 outputs:
   Java-Spring:
     value: '{{.grains.java-spring.outputs.endpoint}}'
-    type: link
+    kind: link
 grains:
   infra:
     kind: terraform
