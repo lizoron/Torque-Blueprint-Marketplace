@@ -1,5 +1,5 @@
 module "application" {
-    source = "github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-application"
+    source = "github.com/QualiTorque/TFSamples//terraform-modules/sandbox-application"
     application_name = "java-spring"
     ami = "ami-f90a4880" // Ubuntu 20.04
     instance_type = "t2.nano"
