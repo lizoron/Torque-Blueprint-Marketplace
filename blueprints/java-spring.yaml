@@ -14,6 +14,10 @@ outputs:
   SSH Portal:
     value: '{{.grains.ssh-portal.outputs.endpoint}}'
     kind: link
+  private-ip:
+    value: '{{.grains.java-spring.outputs.private_ip}}'
+  private-key:
+    value: '{{.grains.infra.outputs.private_key}}'
 grains:
   infra:
     kind: terraform
@@ -46,6 +50,7 @@ grains:
         - vpc: '{{grains.infra.outputs.vpc}}'
       outputs:
         - endpoint
+        - private_ip
     tf-version: 1.2.5
   ssh-portal:
     kind: terraform
