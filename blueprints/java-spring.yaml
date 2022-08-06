@@ -7,6 +7,9 @@ inputs:
     allowed_values:
       - eks
     default: eks
+outputs:
+  Java-Spring:
+  value: '{{.grains.java-spring.outputs.endpoint}}'
 grains:
   infra:
     kind: terraform
@@ -38,3 +41,5 @@ grains:
         - default_sandbox_security_group: '{{grains.infra.outputs.default_sandbox_security_group}}'
         - vpc: '{{grains.infra.outputs.vpc}}'
     tf-version: 1.2.5
+      outputs:
+        - endpoint
