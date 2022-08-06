@@ -1,5 +1,5 @@
 module "application" {
-    source = "../sandbox-application"
+    source = "github.com/QualiTorque/TFSamples//terraform-modules/sandbox-application"
     application_name = "guacamole"
     ami = "ami-0141514361b6a3c1b" // Ubuntu 20.0
     instance_type = "t3.medium"
