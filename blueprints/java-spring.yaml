@@ -11,6 +11,9 @@ outputs:
   Java-Spring:
     value: '{{.grains.java-spring.outputs.endpoint}}'
     kind: link
+  SSH Portal:
+    value: '{{.grains.guacamole.outputs.endpoint}}'
+    kind: link
 grains:
   infra:
     kind: terraform
@@ -44,4 +47,20 @@ grains:
       outputs:
         - endpoint
     tf-version: 1.2.5
-  
+  guacamole:
+    kind: terraform
+    depends-on: infra
+    spec:
+      source:
+        path: github.com/qualitorque/tfsamples.git//terraform-modules/guacamole
+      host:
+        name: '{{ .inputs.host_name }}'
+        service-account: torque-sandbox-creator
+      inputs:
+        - subnets: '{{grains.infra.outputs.subnets}}'
+        - ec2_key: '{{grains.infra.outputs.ec2_key}}'
+        - default_sandbox_security_group: '{{grains.infra.outputs.default_sandbox_security_group}}'
+        - vpc: '{{grains.infra.outputs.vpc}}'
+      outputs:
+        - endpoint
+    tf-version: 1.2.5
