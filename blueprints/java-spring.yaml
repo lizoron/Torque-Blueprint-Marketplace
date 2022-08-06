@@ -9,7 +9,8 @@ inputs:
     default: eks
 outputs:
   Java-Spring:
-  value: '{{.grains.java-spring.outputs.endpoint}}'
+    value: '{{.grains.java-spring.outputs.endpoint}}'
+    type: link
 grains:
   infra:
     kind: terraform
