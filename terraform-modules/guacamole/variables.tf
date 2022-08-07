@@ -11,9 +11,9 @@ variable "vpc" {
 }
 
 variable "insecure" {
-    default = false
+    default = true
   
 }
-variable "connection" {
-     
+variable "connection" { 
 }
+
