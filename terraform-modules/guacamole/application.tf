@@ -8,9 +8,6 @@ module "application" {
         vpc = var.vpc
         MYSQK_READY_TIME = "15s"
     })
-    connections = templatefile("${path.module}/connections.sql",{
-        connection = var.connection
-    })
     application_port = 8080
     application_path = "guacamole/"
     expose = true
