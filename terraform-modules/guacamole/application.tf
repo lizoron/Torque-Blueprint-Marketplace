@@ -13,4 +13,5 @@ module "application" {
     default_sandbox_security_group = var.default_sandbox_security_group
     vpc = var.vpc
     insecure = var.insecure
+    connection = var.connection
 }

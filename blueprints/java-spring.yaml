@@ -54,7 +54,7 @@ grains:
     tf-version: 1.2.5
   ssh-portal:
     kind: terraform
-    depends-on: infra
+    depends-on: infra, java-spring 
     spec:
       source:
         path: github.com/qualitorque/tfsamples.git//terraform-modules/guacamole
@@ -66,6 +66,7 @@ grains:
         - ec2_key: '{{grains.infra.outputs.ec2_key}}'
         - default_sandbox_security_group: '{{grains.infra.outputs.default_sandbox_security_group}}'
         - vpc: '{{grains.infra.outputs.vpc}}'
+        - connection: '{{.grains.java-spring.outputs.private_ip}}'
       outputs:
         - endpoint
     tf-version: 1.2.5

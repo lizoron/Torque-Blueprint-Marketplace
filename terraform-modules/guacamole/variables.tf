@@ -14,3 +14,6 @@ variable "insecure" {
     default = false
   
 }
+variable "connection" {
+     
+}

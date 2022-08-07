@@ -4,9 +4,8 @@
 # set -o xtrace
 # env
 # set
-
-
-
+export CONNECTION=${connection}
+echo $CONNECTION
 #Install Docker
 apt-get update -y
  apt-get install -y ca-certificates curl gnupg lsb-release
