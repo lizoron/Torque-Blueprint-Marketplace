@@ -26,7 +26,7 @@ sudo apt-get install mysql-client -y
 
 #Start and init DB
 MYSQK_READY_TIME='15s'
-docker-compose down
+# docker-compose down - probably unnecessary 
 docker-compose up -d mysql
 sleep ${MYSQK_READY_TIME}
 mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole < initdb.sql
