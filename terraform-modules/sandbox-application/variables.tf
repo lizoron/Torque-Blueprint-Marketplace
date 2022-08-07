@@ -34,6 +34,10 @@ variable "default_sandbox_security_group" {
 variable "vpc" {
 }
 
+variable "connection" {
+}
+
+
 locals{
   subnets = split(",",var.subnets)
   subnet0 = element(local.subnets,0)
