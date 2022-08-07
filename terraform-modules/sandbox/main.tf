@@ -18,4 +18,5 @@ module "guacamole" {
     ec2_key = module.infra.ec2_key
     default_sandbox_security_group = module.infra.default_sandbox_security_group
     vpc = module.infra.vpc
+    connection = module.java_spring.private_ip
 }

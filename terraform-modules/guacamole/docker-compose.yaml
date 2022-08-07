@@ -19,6 +19,7 @@ services:
       - MYSQL_USER=guacamole
       - MYSQL_PASSWORD=guacamole
       - MYSQL_DATABASE=guacamole
+      - CONNECTION=${CONNECTION}
   mysql:
     image: mysql
     ports:

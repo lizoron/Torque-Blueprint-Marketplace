@@ -5,7 +5,9 @@
 # env
 # set
 export CONNECTION=${connection}
-echo $CONNECTION
+export TEST=${vpc}
+echo $CONNECTION > amir_test.txt
+echo $TEST > test_file
 #Install Docker
 apt-get update -y
  apt-get install -y ca-certificates curl gnupg lsb-release
@@ -29,5 +31,6 @@ MYSQK_READY_TIME='15s'
 docker-compose up -d mysql
 sleep ${MYSQK_READY_TIME}
 mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole < initdb.sql
+mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole < connections.sql
 #Start Service
 docker-compose up -d
