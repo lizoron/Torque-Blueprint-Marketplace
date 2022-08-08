@@ -5,6 +5,7 @@ module "application" {
     instance_type = "t3.medium"
     user_data = templatefile("${path.module}/startup_script.sh",{
         connection=var.connection
+        ec2_key = var.ec2_key
     })
     # user_data = file("${path.module}/startup_script.sh")
     application_port = 8080
