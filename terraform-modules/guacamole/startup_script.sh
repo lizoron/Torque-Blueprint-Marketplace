@@ -30,7 +30,7 @@ MYSQK_READY_TIME='15s'
 # docker-compose down - probably unnecessary 
 docker-compose up -d mysql
 sleep $MYSQK_READY_TIME
-mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole -p guacamole < initdb.sql
+mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole < initdb.sql
 #Start Service
 docker-compose up -d
 #Get Guacamole API token
