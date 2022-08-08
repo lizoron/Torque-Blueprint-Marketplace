@@ -5,7 +5,6 @@ module "application" {
     instance_type = "t3.medium"
     user_data = templatefile("${path.module}/startup_script.sh",{
         connection = var.connection
-        vpc = var.vpc
     })
     application_port = 8080
     application_path = "guacamole/"

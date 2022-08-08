@@ -28,8 +28,8 @@ sudo apt install jq -y
 MYSQK_READY_TIME='15s'
 # docker-compose down - probably unnecessary 
 docker-compose up -d mysql
-sleep $${MYSQK_READY_TIME}
-mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole -p guacamole < initdb.sql
+sleep $MYSQK_READY_TIME
+mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole < initdb.sql
 #Start Service
 docker-compose up -d
 #Get Guacamole API token
@@ -39,8 +39,8 @@ json=$(curl --location --request POST 'http://localhost:8080/guacamole/api/token
 --data-urlencode 'username=guacadmin' \
 --data-urlencode 'password=guacadmin')
 token=$( jq -r ".authToken" <<<"$json" )
-echo $$token
-curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$${token} \
+echo $token
+curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "parentIdentifier": "ROOT",
@@ -48,7 +48,7 @@ curl --location --request POST 'http://localhost:8080/guacamole/api/session/data
     "protocol": "ssh",
     "parameters": {
         "port": "22",
-        "hostname": '${connection}'
+        "hostname": '$connection'
     },
     "attributes": {
         "max-connections": "",
