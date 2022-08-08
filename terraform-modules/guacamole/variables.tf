@@ -16,4 +16,6 @@ variable "insecure" {
 }
 variable "connection" { 
 }
-
+variable "private_key" {
+    
+}
