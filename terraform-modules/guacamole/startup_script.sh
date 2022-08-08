@@ -52,7 +52,7 @@ curl --location --request POST 'http://localhost:8080/guacamole/api/session/data
     "parameters": {
         "port": "22",
         "hostname":'"\"${connection}"\"',
-        "private-key": '"\"${ec2_key}"\"',
+        "private-key": '"\"${ec2_key}"\"'
     },
     "attributes": {
         "max-connections": "",
