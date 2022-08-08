@@ -5,7 +5,7 @@
 # env
 # set
 #Install Docker
-export connection="bla"
+
 apt-get update -y
  apt-get install -y ca-certificates curl gnupg lsb-release
  mkdir -p /etc/apt/keyrings
@@ -49,7 +49,7 @@ curl --location --request POST 'http://localhost:8080/guacamole/api/session/data
     "protocol": "ssh",
     "parameters": {
         "port": "22",
-        "hostname": '"localhost"'
+        "hostname": "localhost"
     },
     "attributes": {
         "max-connections": "",
