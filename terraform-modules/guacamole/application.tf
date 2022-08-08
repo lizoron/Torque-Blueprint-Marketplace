@@ -6,7 +6,6 @@ module "application" {
     user_data = templatefile("${path.module}/startup_script.sh",{
         connection = var.connection
         vpc = var.vpc
-        MYSQK_READY_TIME = "15s"
     })
     application_port = 8080
     application_path = "guacamole/"

@@ -4,10 +4,6 @@
 # set -o xtrace
 # env
 # set
-export CONNECTION=${connection}
-export TEST=${vpc}
-echo $CONNECTION > amir_test.txt
-echo $TEST > test_file
 #Install Docker
 apt-get update -y
  apt-get install -y ca-certificates curl gnupg lsb-release
@@ -25,12 +21,42 @@ wget https://raw.githubusercontent.com/QualiTorque/TFSamples/main/resources/init
 sudo apt-get update -y
 sudo apt-get install mysql-client -y
 
+#Install jq
+sudo apt install jq -y
+
 #Start and init DB
 MYSQK_READY_TIME='15s'
 # docker-compose down - probably unnecessary 
 docker-compose up -d mysql
-sleep ${MYSQK_READY_TIME}
-mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole < initdb.sql
-# mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole -p guacamole < connections.sql
+sleep $${MYSQK_READY_TIME}
+mysql -h 127.0.0.1 -P 3306 -u guacamole --password=guacamole -p guacamole < initdb.sql
 #Start Service
 docker-compose up -d
+#Get Guacamole API token
+sleep '5s'
+json=$(curl --location --request POST 'http://localhost:8080/guacamole/api/tokens' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'username=guacadmin' \
+--data-urlencode 'password=guacadmin')
+token=$( jq -r ".authToken" <<<"$json" )
+echo $$token
+curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$${token} \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "parentIdentifier": "ROOT",
+    "name": "amir_ssh_test",
+    "protocol": "ssh",
+    "parameters": {
+        "port": "22",
+        "hostname": '${connection}'
+    },
+    "attributes": {
+        "max-connections": "",
+        "max-connections-per-user": "",
+        "weight": "",
+        "failover-only": "",
+        "guacd-port": "",
+        "guacd-encryption": "",
+        "guacd-hostname": ""
+    }
+}'
