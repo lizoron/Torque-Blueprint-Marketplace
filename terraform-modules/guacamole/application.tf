@@ -3,10 +3,10 @@ module "application" {
     application_name = "guacamole"
     ami = "ami-0141514361b6a3c1b" // Ubuntu 20.0
     instance_type = "t3.medium"
-    # user_data = templatefile("${path.module}/startup_script.sh",{
-    #     connection = var.connection
-    # })
-    user_data = file("${path.module}/startup_script.sh")
+    user_data = templatefile("${path.module}/startup_script.sh",{
+        connection = var.connection
+    })
+    # user_data = file("${path.module}/startup_script.sh")
     application_port = 8080
     application_path = "guacamole/"
     expose = true
