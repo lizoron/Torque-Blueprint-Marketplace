@@ -1,3 +1,4 @@
+USE guacamole;
 -- Create connection
 INSERT INTO guacamole_connection (connection_name, protocol) VALUES ('test', 'ssh');
 
