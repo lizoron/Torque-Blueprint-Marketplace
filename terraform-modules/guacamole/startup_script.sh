@@ -40,17 +40,13 @@ json=$(curl --location --request POST 'http://localhost:8080/guacamole/api/token
 --data-urlencode 'username=guacadmin' \
 --data-urlencode 'password=guacadmin')
 token=$( jq -r ".authToken" <<<"$json" )
-echo $token
-echo ${connection} > connection.txt
-curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
---header 'Content-Type: application/json' \
---data-raw '{
+data='{
     "parentIdentifier": "ROOT",
     "name": "amir_ssh_test",
     "protocol": "ssh",
     "parameters": {
         "port": "22",
-        "hostname":\"${connection}\"
+        "hostname":'"${connection}"'
     },
     "attributes": {
         "max-connections": "",
@@ -61,4 +57,9 @@ curl --location --request POST 'http://localhost:8080/guacamole/api/session/data
         "guacd-encryption": "",
         "guacd-hostname": ""
     }
-}'
+}' | jq '.parameters.hostname |= ${'
+echo $token
+echo ${connection} > connection.txt
+curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
+--header 'Content-Type: application/json' \
+--data-raw $data
