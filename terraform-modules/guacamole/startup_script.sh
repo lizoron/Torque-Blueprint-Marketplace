@@ -41,7 +41,7 @@ json=$(curl --location --request POST 'http://localhost:8080/guacamole/api/token
 --data-urlencode 'password=guacadmin')
 token=$( jq -r ".authToken" <<<"$json" )
 echo $token
-echo $connection
+echo ${connection} > connection.txt
 curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
 --header 'Content-Type: application/json' \
 --data-raw '{
