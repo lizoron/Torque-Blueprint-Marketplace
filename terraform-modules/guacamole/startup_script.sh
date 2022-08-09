@@ -43,6 +43,8 @@ sudo apt install jq -y
 # token=$( jq -r ".authToken" <<<"$json" )
 
 # echo $token
+export from_tf=$private_key
+echo $private_key
 private_key="\"$private_key"\"
 # echo ${private_key}
 echo $private_key
