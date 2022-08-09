@@ -48,6 +48,7 @@ sudo apt install jq -y
 # echo $private_key
 private_key_after_jq1=$(jq -sR . <<< $private_key)
 # private_key=$(jq -sR . <<< ${private_key})
+echo "\"${private_key_after_jq1}"\"
 echo $private_key_after_jq1
 # private_key_after_jq2=$(jq -sR . <<< ${private_key})
 # echo $private_key_after_jq2
