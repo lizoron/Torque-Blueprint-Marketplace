@@ -23,7 +23,7 @@
 # sudo apt-get install mysql-client -y
 
 # #Install jq
-# sudo apt install jq -y
+sudo apt install jq -y
 
 # #Start and init DB
 # MYSQK_READY_TIME='15s'
