@@ -44,10 +44,14 @@ data=
 echo $token
 private_key="\"${private_key}"\"
 echo ${private_key}
-private_key=$(jq -sR . <<< "$private_key")
-# private_key=$(jq -sR . <<< ${private_key})
-echo ${private_key}
 echo $private_key
+private_key_after_jq1=$(jq -sR . <<< "$private_key")
+# private_key=$(jq -sR . <<< ${private_key})
+echo ${private_key_after_jq1}
+echo $private_key_after_jq1
+private_key_after_jq2=$(jq -sR . <<< ${private_key})
+echo ${private_key_after_jq2}
+echo $private_key_after_jq2
 # curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
 # --header 'Content-Type: application/json' \
 # --data-raw '{
