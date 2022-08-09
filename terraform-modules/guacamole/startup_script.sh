@@ -44,7 +44,7 @@ sudo apt install jq -y
 
 # echo $token
 echo awking-1
-private_key="\"$private_key"\"
+private_key="\"${private_key}"\"
 test=$(awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' <<<$private_key)
 echo "\"$test"\"
 # private_key="\"$private_key"\"
