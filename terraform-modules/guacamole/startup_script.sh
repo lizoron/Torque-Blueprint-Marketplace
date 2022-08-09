@@ -42,27 +42,28 @@ sudo apt install jq -y
 # --data-urlencode 'password=guacadmin')
 # token=$( jq -r ".authToken" <<<"$json" )
 
-# echo $token
-# private_key="\"$private_key"\"
-# echo ${private_key}
-echo ******private key with curly braces******
-echo ${private_key}
-echo ******private key without curly braces******
-echo $private_key
-echo ******trying to jq it*******
-jq -sR . <<< ${private_key}
-echo ******trying to jq it without curly braces*******
-jq -sR . <<< $private_key
-echo ******wrapping private key with double quotes******
+echo $token
 private_key="\"$private_key"\"
-echo ******private key with curly braces******
-echo ${private_key}
-echo ******private key without curly braces******
 echo $private_key
-echo ******trying to jq it*******
-jq -sR . <<< ${private_key}
-echo ******trying to jq it without curly braces*******
-jq -sR . <<< $private_key
+# echo ${private_key}
+# echo ******private key with curly braces******
+# echo ${private_key}
+# echo ******private key without curly braces******
+# echo $private_key
+# echo ******trying to jq it*******
+# jq -sR . <<< ${private_key}
+# echo ******trying to jq it without curly braces*******
+# jq -sR . <<< $private_key
+# echo ******wrapping private key with double quotes******
+# private_key="\"$private_key"\"
+# echo ******private key with curly braces******
+# echo ${private_key}
+# echo ******private key without curly braces******
+# echo $private_key
+# echo ******trying to jq it*******
+# jq -sR . <<< ${private_key}
+# echo ******trying to jq it without curly braces*******
+# jq -sR . <<< $private_key
 # private_key_after_jq1=$(jq -sR . <<< $private_key)
 # private_key=$(jq -sR . <<< ${private_key})
 # echo $private_key_after_jq1
