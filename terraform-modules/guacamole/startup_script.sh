@@ -43,49 +43,50 @@ token=$( jq -r ".authToken" <<<"$json" )
 data=
 echo $token
 private_key="\"${private_key}"\"
+echo ${private_key}
 private_key=$(jq -sR . <<< "$private_key")
 # private_key=$(jq -sR . <<< ${private_key})
 echo ${private_key}
 echo $private_key
-curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
---header 'Content-Type: application/json' \
---data-raw '{
-    "parentIdentifier": "ROOT",
-    "name": "amir_ssh_test",
-    "protocol": "ssh",
-    "parameters": {
-        "port": "22",
-        "hostname":'"\"${connection}"\"',
-        "private-key": '${private_key}'
-    },
-    "attributes": {
-        "max-connections": "",
-        "max-connections-per-user": "",
-        "weight": "",
-        "failover-only": "",
-        "guacd-port": "",
-        "guacd-encryption": "",
-        "guacd-hostname": ""
-    }
-}'
-curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
---header 'Content-Type: application/json' \
---data-raw '{
-    "parentIdentifier": "ROOT",
-    "name": "amir_ssh_test",
-    "protocol": "ssh",
-    "parameters": {
-        "port": "22",
-        "hostname":'"\"${connection}"\"',
-        "private-key": '$private_key'
-    },
-    "attributes": {
-        "max-connections": "",
-        "max-connections-per-user": "",
-        "weight": "",
-        "failover-only": "",
-        "guacd-port": "",
-        "guacd-encryption": "",
-        "guacd-hostname": ""
-    }
-}'
+# curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
+# --header 'Content-Type: application/json' \
+# --data-raw '{
+#     "parentIdentifier": "ROOT",
+#     "name": "amir_ssh_test",
+#     "protocol": "ssh",
+#     "parameters": {
+#         "port": "22",
+#         "hostname":'"\"${connection}"\"',
+#         "private-key": '${private_key}'
+#     },
+#     "attributes": {
+#         "max-connections": "",
+#         "max-connections-per-user": "",
+#         "weight": "",
+#         "failover-only": "",
+#         "guacd-port": "",
+#         "guacd-encryption": "",
+#         "guacd-hostname": ""
+#     }
+# }'
+# curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
+# --header 'Content-Type: application/json' \
+# --data-raw '{
+#     "parentIdentifier": "ROOT",
+#     "name": "amir_ssh_test",
+#     "protocol": "ssh",
+#     "parameters": {
+#         "port": "22",
+#         "hostname":'"\"${connection}"\"',
+#         "private-key": $private_key1
+#     },
+#     "attributes": {
+#         "max-connections": "",
+#         "max-connections-per-user": "",
+#         "weight": "",
+#         "failover-only": "",
+#         "guacd-port": "",
+#         "guacd-encryption": "",
+#         "guacd-hostname": ""
+#     }
+# }'
