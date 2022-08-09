@@ -43,7 +43,7 @@ sudo apt install jq -y
 # token=$( jq -r ".authToken" <<<"$json" )
 
 # echo $token
-jq -sR . <<<$private_key
+jq -sR . <<<${private_key}
 # private_key="\"$private_key"\"
 # echo ${private_key}
 # curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
