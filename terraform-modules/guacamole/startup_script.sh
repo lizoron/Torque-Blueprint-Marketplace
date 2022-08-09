@@ -42,6 +42,7 @@ json=$(curl --location --request POST 'http://localhost:8080/guacamole/api/token
 token=$( jq -r ".authToken" <<<"$json" )
 data=
 echo $token
+echo $private_key
 private_key=$(jq -sR . <<< "$private_key")
 echo $private_key
 curl --location --request POST 'http://localhost:8080/guacamole/api/session/data/mysql/connections?token='$token \
