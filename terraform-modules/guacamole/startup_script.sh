@@ -23,6 +23,7 @@
 # sudo apt-get install mysql-client -y
 
 # #Install jq
+sudo apt-get update -y
 sudo apt install jq -y
 
 # #Start and init DB
