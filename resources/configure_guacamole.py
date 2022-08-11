@@ -1,7 +1,6 @@
 import requests
 import json
 import sys
-import os
 
 
 baseurl = sys.argv[1]
@@ -40,5 +39,5 @@ headers = {
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
-
+print(payload)
 print(response.text)
