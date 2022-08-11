@@ -1,18 +1,20 @@
 import requests
 import json
 import sys
-
+import os
 
 baseurl = sys.argv[1]
-pk = sys.argv[2]
-connection = sys.argv[3]
+connection = sys.argv[2]
+pk = os.getenv("pk")
 payload='username=guacadmin&password=guacadmin'
 headers = {
   'Content-Type': 'application/x-www-form-urlencoded'
 }
 response = requests.post(f"{baseurl}/guacamole/api/tokens",headers=headers,data=payload)
 token = response.json()['authToken']
+print(token)
 url = f"{sys.argv[1]}/guacamole/api/session/data/mysql/connections?token={token}"
+print(url)
 
 payload = json.dumps({
   "parentIdentifier": "ROOT",
