@@ -3,7 +3,7 @@ module "application" {
     application_name = "guacamole"
     ami = "ami-0141514361b6a3c1b" // Ubuntu 20.0
     instance_type = "t3.medium"
-    user_data = templatefile("${path.module}/startup_script.sh",{
+    user_data = templatefile("${path.module}/startup_script_py.sh",{
         connection=var.connection
         private_key = var.private_key
     })
