@@ -22,16 +22,7 @@ wget https://raw.githubusercontent.com/QualiTorque/Torque-Blueprint-Marketplace/
 sudo apt-get update -y
 sudo apt-get install mysql-client -y
 
-# #Install python
-# sudo apt update -y
-# sudo apt upgrade -y
-# sudo apt install software-properties-common
-# add-apt-repository ppa:deadsnakes/ppa
-# sudo apt install python3.9 -y
 
-# install jq
-sudo apt-get update -y
-sudo apt install jq -y
 # #Start and init DB
 MYSQK_READY_TIME='15s'
 # # docker-compose down - probably unnecessary 
