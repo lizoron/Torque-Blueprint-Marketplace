@@ -7,6 +7,7 @@ import os
 baseurl = sys.argv[1]
 connectionsJson = sys.argv[2]
 
+
 privateIp = connectionsJson # Need to be changed!
 privateKey = os.getenv("pk")
 payload='username=guacadmin&password=guacadmin'

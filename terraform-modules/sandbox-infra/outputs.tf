@@ -15,6 +15,6 @@ output "vpc" {
 }
 
 output "private_key" {
-  value = file("${path.module}/creds/torque_ec2_key.pem")
+  sensitive = true
+    value = tls_private_key.key.private_key_openssh
 }
-
