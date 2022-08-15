@@ -6,6 +6,8 @@ import os
 
 baseurl = sys.argv[1]
 connectionsJson = sys.argv[2]
+
+privateIp = connectionsJson # Need to be changed!
 privateKey = os.getenv("pk")
 payload='username=guacadmin&password=guacadmin'
 headers = {
@@ -24,7 +26,7 @@ payload = json.dumps({
   "parameters": {
     "port": "22",
     "username": "ubuntu",
-    "hostname": "Connection",
+    "hostname": privateIp,
     "private-key": privateKey
   },
   "attributes": {
