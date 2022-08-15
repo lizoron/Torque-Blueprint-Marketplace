@@ -16,5 +16,5 @@ output "vpc" {
 
 output "private_key" {
   sensitive = true
-    value = tls_private_key.key.private_key_openssh
+    value = file(local.private_key_file)
 }
