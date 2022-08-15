@@ -1,3 +1,4 @@
+from typing import Literal
 import requests
 import json
 import sys
@@ -14,7 +15,7 @@ response = requests.post(f"{baseurl}/guacamole/api/tokens",headers=headers,data=
 token = response.json()['authToken']
 print(token)
 url = f"{sys.argv[1]}/guacamole/api/session/data/mysql/connections?token={token}"
-connectionsName = "Connection"
+connectionName = "Connection"
 
 payload = json.dumps({
   "parentIdentifier": "ROOT",
