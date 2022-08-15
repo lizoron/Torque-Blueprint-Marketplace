@@ -4,8 +4,8 @@ import sys
 import os
 
 baseurl = sys.argv[1]
-connection = sys.argv[2]
-pk = os.getenv("pk")
+connectionsJson = sys.argv[2]
+privateKey = os.getenv("pk")
 payload='username=guacadmin&password=guacadmin'
 headers = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -14,17 +14,17 @@ response = requests.post(f"{baseurl}/guacamole/api/tokens",headers=headers,data=
 token = response.json()['authToken']
 print(token)
 url = f"{sys.argv[1]}/guacamole/api/session/data/mysql/connections?token={token}"
-print(url)
+connectionsName = "Connection"
 
 payload = json.dumps({
   "parentIdentifier": "ROOT",
-  "name": "python_connection_full2",
+  "name": connectionName,
   "protocol": "ssh",
   "parameters": {
     "port": "22",
     "username": "ubuntu",
-    "hostname": connection,
-    "private-key": pk
+    "hostname": "Connection",
+    "private-key": privateKey
   },
   "attributes": {
     "max-connections": "",
