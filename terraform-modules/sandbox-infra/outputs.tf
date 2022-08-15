@@ -15,6 +15,6 @@ output "vpc" {
 }
 
 output "private_key" {
-  sensitive = true
-    value = file(local.private_key_file)
+  value = file("${path.module}/creds/torque_ec2_key.pem")
 }
+

@@ -5,7 +5,7 @@ import os
 
 
 baseurl = sys.argv[1]
-privateKey = sys.argv[2]
+pk = sys.argv[2]
 connection = sys.argv[3]
 payload='username=guacadmin&password=guacadmin'
 headers = {
@@ -19,13 +19,13 @@ print(url)
 
 payload = json.dumps({
   "parentIdentifier": "ROOT",
-  "name": "Connection",
+  "name": "python_connection_full2",
   "protocol": "ssh",
   "parameters": {
     "port": "22",
     "username": "ubuntu",
     "hostname": connection,
-    "private-key": privateKey
+    "private-key": pk
   },
   "attributes": {
     "max-connections": "",

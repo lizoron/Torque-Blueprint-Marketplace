@@ -1,0 +1,28 @@
+spec_version: 2
+description: Spec1 sample blueprint created with spec2 using Terraform
+# blueprint inputs can be provided by the user, API or CI plugin when creating an environment from this blueprint.
+inputs:
+  aws_region:
+    default: eu-west-1
+  host_name:
+    type: string
+    default: eks
+outputs:
+  URL:
+    value: '{{ .grains.spec1-sample.outputs.endpoint }}'
+    kind: link
+
+grains:
+  spec1-sample:
+    kind: terraform
+    spec:
+      source:
+        path: github.com/qualitorque/tfsamples.git//terraform-modules/spec1-sample
+      host:
+        name: '{{ .inputs.host_name }}'
+        service-account: torque-app-creator
+      inputs:
+      - aws_region: '{{ .inputs.aws_region }}'
+      outputs:
+        - endpoint     
+    tf-version: 1.2.5
