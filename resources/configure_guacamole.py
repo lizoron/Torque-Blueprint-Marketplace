@@ -18,7 +18,7 @@ print(url)
 
 payload = json.dumps({
   "parentIdentifier": "ROOT",
-  "name": "python_connection_full2",
+  "name": "Java Spring",
   "protocol": "ssh",
   "parameters": {
     "port": "22",
