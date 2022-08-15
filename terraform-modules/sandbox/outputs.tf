@@ -12,5 +12,6 @@ output "guacamole"{
 
 output "private_key" {
     value = module.infra.private_key
+    sensitive = true
   
 }
