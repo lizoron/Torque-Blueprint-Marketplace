@@ -16,8 +16,7 @@ outputs:
     kind: link
   Java-Spring private-ip:
     value: '{{.grains.java-spring.outputs.private_ip}}'
-  # private-key:
-  #   value: '{{.grains.infra.outputs.private_key}}'
+
 grains:
   infra:
     kind: terraform
@@ -67,6 +66,7 @@ grains:
         - default_sandbox_security_group: '{{grains.infra.outputs.default_sandbox_security_group}}'
         - vpc: '{{grains.infra.outputs.vpc}}'
         - connection: '{{.grains.java-spring.outputs.private_ip}}'
+        - private_key: '{{.grains.infra.outputs.private_key}}'
       outputs:
         - endpoint
     tf-version: 1.2.5
