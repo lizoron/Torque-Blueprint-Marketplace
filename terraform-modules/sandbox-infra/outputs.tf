@@ -14,11 +14,6 @@ output "vpc" {
   value = aws_vpc.VPC.id
 }
 
-/* output "old_private_key" {
-  value = file("${path.module}/creds/torque_ec2_key.pem")
-}
- */
 output "private_key" {
-    value = nonsensitive(tls_private_key.key.private_key_pem)
-  
+    value = tls_private_key.key.private_key_pem
 }
