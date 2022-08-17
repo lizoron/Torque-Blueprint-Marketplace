@@ -7,7 +7,7 @@ This repository contains an example how to do it.
 1. [Infrstructure](../terraform-modules/sandbox-infra/) - This module generate all needed resources required by any application in the sandbox.\
 It generates the following resources:
 - A VPC that connected to the internet
-- 2 subnets
+- 2 Subnets
 - SSH key pairs for any VM running application
 - A security group designed to allow a free communication between all relevant resources within the sandbox
 2. [Application](../terraform-modules/sandbox-application/) - This is an abstract module for creating any kind of app.
