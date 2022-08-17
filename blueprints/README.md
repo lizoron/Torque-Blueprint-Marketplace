@@ -4,7 +4,7 @@ It composed out of a cloud infrastructure and may contain other dependant applic
 This repository contains an example how to do it.
 
 ## Terraform modules:
-1. [Infrstructure](../terraform-modules/sandbox-infra/) - This module generate all needed resources required by any application in the sandbox.
+1. [Infrstructure](../terraform-modules/sandbox-infra/) - This module generate all needed resources required by any application in the sandbox.\
 It generates the following resources:
 - A VPC that connected to the internet
 - 2 subnets
