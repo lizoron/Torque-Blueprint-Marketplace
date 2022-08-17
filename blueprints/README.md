@@ -10,7 +10,11 @@ It generates the following resources:
 - 2 Subnets
 - SSH key pairs for any VM running application
 - A security group designed to allow a free communication between all relevant resources within the sandbox
-2. [Application](../terraform-modules/sandbox-application/) - This is an abstract module for creating any kind of app.
+2. [Application](../terraform-modules/sandbox-application/) - This is an abstract module for creating any kind of app.\
+It generates the following resources for each app:
+- A VM running the app
+- A security group with a specific serving port open for other component of the sandbox
+- An optional Load Balancer designed to pass the public trafic to the application
 3. [Java-Spring](../terraform-modules/java-spring/) - This is a concrete application running a web server.
 4. [Guacamole](../terraform-modules/guacamole/) - This is the [Apache Guacamole Project](https://guacamole.apache.org/) application designed to allow a secure access to debug other VMs run by a sandbox.
 ## Blueprint
