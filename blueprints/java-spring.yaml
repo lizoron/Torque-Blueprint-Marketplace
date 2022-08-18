@@ -4,9 +4,6 @@ description: Java Spring sample implemented with Torque and Terraform
 inputs:
   host_name:
     type: execution-host
-    allowed_values:
-      - eks
-    default: eks
 outputs:
   Java-Spring:
     value: '{{.grains.java-spring.outputs.endpoint}}'
