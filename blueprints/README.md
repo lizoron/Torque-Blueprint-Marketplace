@@ -20,8 +20,10 @@ It generates the following resources for each app:
 ![application](../pics/application.png)
 
 3. [Java-Spring](../terraform-modules/java-spring/) - This is a concrete application running a web server.\
+It is based on the previous module.\
 ![Java-Spring](../pics/Java%20Spring.png)
 4. [Guacamole](../terraform-modules/guacamole/) - This is the [Apache Guacamole Project](https://guacamole.apache.org/) application designed to allow a secure access to debug other VMs run by a sandbox.\
+It is based on the application module.\
 ![Guacamole](../pics/Guacamole.png)
 ## Blueprint
 [Java-Spring Blueprint](../blueprints/java-spring.yaml) - This is a blueprint making use of all of the previous Terraform modules.\
