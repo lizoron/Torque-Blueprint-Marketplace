@@ -24,4 +24,5 @@ It generates the following resources for each app:
 4. [Guacamole](../terraform-modules/guacamole/) - This is the [Apache Guacamole Project](https://guacamole.apache.org/) application designed to allow a secure access to debug other VMs run by a sandbox.\
 ![Guacamole](../pics/Guacamole.png)
 ## Blueprint
-[Java-Spring Blueprint](../blueprints/java-spring.yaml) - This is a blueprint making use of all of the previous Terraform modules.
+[Java-Spring Blueprint](../blueprints/java-spring.yaml) - This is a blueprint making use of all of the previous Terraform modules.\
+![Blueprint](../pics/blueprint.png)
