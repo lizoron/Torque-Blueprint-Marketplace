@@ -4,9 +4,6 @@ description: blueprint to create a VM on AWS
 inputs:
   host_name:
     type: execution-host
-    allowed_values:
-      - eks
-    default: eks
   ami:
   instance_type:
 
