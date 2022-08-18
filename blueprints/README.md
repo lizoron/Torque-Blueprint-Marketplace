@@ -14,8 +14,11 @@ It generates the following resources:
 2. [Application](../terraform-modules/sandbox-application/) - This is an abstract module for creating any kind of app.\
 It generates the following resources for each app:
 - A VM running the app
-- A security group with a specific serving port open for other component of the sandbox
+- Application security group with a specific serving port open for other component of the sandbox
 - An optional load balancer designed to pass the public trafic to the application
+- A Load balancer security group for external trafic
+![application](../pics/application.png)
+
 3. [Java-Spring](../terraform-modules/java-spring/) - This is a concrete application running a web server.
 4. [Guacamole](../terraform-modules/guacamole/) - This is the [Apache Guacamole Project](https://guacamole.apache.org/) application designed to allow a secure access to debug other VMs run by a sandbox.
 ## Blueprint
