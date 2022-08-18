@@ -9,7 +9,7 @@ It generates the following resources:
 - A VPC that connected to the internet
 - 2 Subnets
 - SSH key pairs for any VM running application
-![infrastructure](../images/Infrastructure.png)
+![infrastructure](../pics/Infrastructure.png)
 
 - A security group designed to allow a free communication between all relevant resources within the sandbox
 2. [Application](../terraform-modules/sandbox-application/) - This is an abstract module for creating any kind of app.\
