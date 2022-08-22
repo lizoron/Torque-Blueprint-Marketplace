@@ -1,13 +1,6 @@
-variable "region" {
-  default     = "us-east-2"
-  description = "AWS region"
-}
-
 provider "aws" {
-  region = var.region
+  region = var.aws_region
 }
-
-data "aws_availability_zones" "available" {}
 
 locals {
   cluster_name = "education-eks-${random_string.suffix.result}"
