@@ -22,12 +22,12 @@ module "eks" {
       capacity_type  = "ON_DEMAND"
     }
   }
-}
 
-data "aws_eks_cluster" "cluster" {
-  name = module.eks.cluster_id
-}
-
-data "aws_eks_cluster_auth" "cluster" {
-  name = module.eks.cluster_id
+map_users = [
+    {
+      userarn  = "arn:aws:iam::799617105972:user/cleanser"
+      username = "cleanser"
+      groups   = ["system:masters"]
+    },
+  ]
 }
