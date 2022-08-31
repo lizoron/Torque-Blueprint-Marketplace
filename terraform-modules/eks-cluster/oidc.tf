@@ -4,13 +4,8 @@
   }
 } 
 
-data "external" "test" {
+data "external" "get_oidc_script" {
   program = ["python", "${path.module}/scripts/get_oidc.py",data.aws_eks_cluster.eks.name]
 
-  
-}
-
-output "oidc" {
-    value = data.external.test.result["oidc"]
   
 }
