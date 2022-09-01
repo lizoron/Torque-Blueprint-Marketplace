@@ -1,28 +1,19 @@
 spec_version: 2
-description: EKS cluster
+description: Auto generated blueprint for terraform module eks-cluster
+# blueprint inputs can be provided by the user, API or CI plugin when creating an environment from this blueprint.
 inputs:
-  region:
+  aws_region:
     type: string
-    display-style: normal
-    default: us-east-2
-  host_name:
-    type: string
-    display-style: normal
-outputs:
-  cluster_endpoint:
-    value: '{{ .grains.eks-cluster.outputs.cluster_endpoint }}'
-  cluster_id:
-    value: '{{ .grains.eks-cluster.outputs.cluster_id }}'
+    default: eu-west-1
   cluster_name:
-    value: '{{ .grains.eks-cluster.outputs.cluster_name }}'
-  cluster_security_group_id:
-    value: '{{ .grains.eks-cluster.outputs.cluster_security_group_id }}'
-  config_map_aws_auth:
-    value: '{{ .grains.eks-cluster.outputs.config_map_aws_auth }}'
-  kubectl_config:
-    value: '{{ .grains.eks-cluster.outputs.kubectl_config }}'
-  region:
-    value: '{{ .grains.eks-cluster.outputs.region }}'
+    type: string
+    default: torque-cluster
+  host_name:
+    type: execution-host
+# blueprint outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
+outputs:
+  oidc:
+    value: '{{ .grains.eks-cluster.outputs.oidc }}'
 grains:
   eks-cluster:
     kind: terraform
@@ -30,22 +21,20 @@ grains:
       source:
         path: github.com/qualitorque/tfsamples.git//terraform-modules/eks-cluster
       host:
+      # Execution Host - the platform where the asset executable will run.
+      # For example, a Kubernetes cluster can be used as an execution host.
         name: '{{ .inputs.host_name }}'
         service-account: eks-cluster-creator
       inputs:
-        - region: '{{ .inputs.region }}'
+      - aws_region: '{{ .inputs.aws_region }}'
+      - cluster_name: '{{ .inputs.cluster_name }}'
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
       outputs:
-        - account_id
-        - caller_arn
-        - caller_user
-        - caller_username
-        - cluster_endpoint
-        - cluster_id
-        - cluster_name
-        - cluster_security_group_id
-        - config_map_aws_auth
-        - kubectl_config
-        - region
+      - oidc
+    # The terraform version that will be used to deploy the module
       tags:
-        auto-tag: false
-    tf-version: 1.2.4
+          auto-tag: false
+    tf-version: 1.2.8
