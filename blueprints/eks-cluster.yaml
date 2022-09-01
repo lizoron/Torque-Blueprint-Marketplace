@@ -20,7 +20,7 @@ grains:
     spec:
       source:
               #github.com/qualitorque/tfsamples.git//terraform-modules/eks-cluster
-        path: github.com/QualiTorque/Torque-Blueprint-Marketplace.git/tree/customers-cluster//terraform-modules/eks-cluster
+        path: github.com/QualiTorque/Torque-Blueprint-Marketplace/tree/customers-cluster//terraform-modules/eks-cluster
       host:
       # Execution Host - the platform where the asset executable will run.
       # For example, a Kubernetes cluster can be used as an execution host.
