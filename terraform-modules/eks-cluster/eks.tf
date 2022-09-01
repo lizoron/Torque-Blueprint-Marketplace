@@ -25,8 +25,8 @@ module "eks" {
 
 map_users = [
     {
-      userarn  = "arn:aws:iam::799617105972:user/cleanser"
-      username = "cleanser"
+      userarn  = local.current_user_arn
+      username = local.current_user_name
       groups   = ["system:masters"]
     },
   ]
