@@ -1,7 +1,7 @@
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "17.24.0"
-  cluster_name    = local.cluster_name
+  cluster_name    = var.cluster_name
   cluster_version = "1.22"
   subnets         = module.vpc.private_subnets
   
@@ -22,12 +22,12 @@ module "eks" {
       capacity_type  = "ON_DEMAND"
     }
   }
-}
 
-data "aws_eks_cluster" "cluster" {
-  name = module.eks.cluster_id
-}
-
-data "aws_eks_cluster_auth" "cluster" {
-  name = module.eks.cluster_id
+map_users = [
+    {
+      userarn  = local.current_user_arn
+      username = local.current_user_name
+      groups   = ["system:masters"]
+    },
+  ]
 }
