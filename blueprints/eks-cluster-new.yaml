@@ -35,4 +35,6 @@ grains:
       outputs:
       - oidc
     # The terraform version that will be used to deploy the module
+      tags:
+          auto-tag: false
     tf-version: 1.2.8
