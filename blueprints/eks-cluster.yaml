@@ -12,8 +12,6 @@ inputs:
     type: execution-host
 # blueprint outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
 outputs:
-  caller_arn:
-    value: '{{ .grains.eks-cluster.outputs.caller_arn }}'
   oidc:
     value: '{{ .grains.eks-cluster.outputs.oidc }}'
 grains:
@@ -21,7 +19,7 @@ grains:
     kind: terraform
     spec:
       source:
-        path: https://github.com/QualiTorque/Torque-Blueprint-Marketplace/tree/customers-cluster/terraform-modules/eks-cluster
+        path: github.com/QualiTorque/Torque-Blueprint-Marketplace/tree/main/terraform-modules/eks-cluster
       host:
       # Execution Host - the platform where the asset executable will run.
       # For example, a Kubernetes cluster can be used as an execution host.
@@ -36,7 +34,6 @@ grains:
       # - VAR_NAME: var value
       env-vars: []
       outputs:
-      - caller_arn
       - oidc
     # The terraform version that will be used to deploy the module
     tf-version: 1.2.8
