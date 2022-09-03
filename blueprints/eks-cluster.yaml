@@ -10,10 +10,7 @@ inputs:
     default: torque-cluster
   host_name:
     type: execution-host
-# blueprint outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
-outputs:
-  oidc:
-    value: '{{ .grains.eks-cluster.outputs.oidc }}'
+# blueprint outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.  
 grains:
   eks-cluster:
     kind: terraform
