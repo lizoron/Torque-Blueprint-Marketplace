@@ -7,7 +7,7 @@ inputs:
     default: eu-west-1
   cluster_name:
     type: string
-    default: torque-cluster
+    default: torque-created-cluster
   host_name:
     type: execution-host
 # blueprint outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
