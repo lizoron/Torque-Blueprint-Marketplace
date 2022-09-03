@@ -28,10 +28,7 @@ grains:
       inputs:
       - aws_region: '{{ .inputs.aws_region }}'
       - cluster_name: '{{ .inputs.cluster_name }}'
-      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
-      # env-vars:
-      # - VAR_NAME: var value
-      env-vars: []
+      - create_oidc: 'no'
       outputs:
       - oidc
     # The terraform version that will be used to deploy the module
