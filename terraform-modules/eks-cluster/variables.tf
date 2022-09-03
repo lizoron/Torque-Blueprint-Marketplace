@@ -3,5 +3,10 @@ variable "aws_region" {
 }
 
 variable "cluster_name" {
-  default = "torque-cluster"
+}
+
+variable "create_oidc" {
+  description = "Create OIDC Provider? yes|no (eksctl required)"
+
+
 }
