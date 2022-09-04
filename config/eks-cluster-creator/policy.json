@@ -23,7 +23,10 @@
                 "iam:ListAttachedRolePolicies",
                 "iam:AttachRolePolicy",
                 "iam:PassRole",
-                "iam:GetRole"
+                "iam:GetRole",
+                "iam:CreateOpenIDConnectProvider",
+                "iam:GetOpenIDConnectProvider",
+                "iam:TagOpenIDConnectProvider"
             ],
             "Resource": "*"
         }
