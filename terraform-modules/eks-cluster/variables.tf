@@ -8,6 +8,8 @@ variable "cluster_name" {
 variable "create_oidc" {
   description = "Create OIDC Provider? yes|no (eksctl required)"
   default = "yes"
+}
 
-
+variable "connect" {
+  description = "Do you want to connect to the newly created cluster?"
 }
