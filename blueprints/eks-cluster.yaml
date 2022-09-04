@@ -14,6 +14,8 @@ inputs:
 outputs:
   cluster-name:
     value: '{{ .inputs.cluster_name}}'
+  oidc:
+    value: '{{.grains.eks-cluster-outputs.oidc}}'
 grains:
   eks-cluster:
     kind: terraform
