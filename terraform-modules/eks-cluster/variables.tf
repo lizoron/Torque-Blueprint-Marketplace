@@ -3,13 +3,14 @@ variable "aws_region" {
 }
 
 variable "cluster_name" {
+  description = "What is the name of the cluster?"
 }
 
-variable "create_oidc" {
-  description = "Create OIDC Provider? yes|no (eksctl required)"
-  default = "yes"
+variable "install_eksctl" {
+  description = "Install eksctl? (linux)"
+  default = "no"
 }
 
-variable "connect" {
-  description = "Do you want to connect to the newly created cluster?"
+variable "local_connection" {
+  description = "Do you want to connect to the newly created cluster? yes | no"
 }

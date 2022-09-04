@@ -28,7 +28,8 @@ grains:
       inputs:
       - aws_region: '{{ .inputs.aws_region }}'
       - cluster_name: '{{ .inputs.cluster_name }}'
-      - create_oidc: 'no'
+      - install_eksctl: 'yes'
+      - local_connection: 'no'
       outputs:
       - oidc
     # The terraform version that will be used to deploy the module
