@@ -20,9 +20,10 @@ You can do it by 2 means:
 2. Use download-directory.github.io [link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FQualiTorque%2FTorque-Blueprint-Marketplace%2Ftree%2Fmain%2Fterraform-modules%2Feks-cluster) to download only the relevant folder.
 ## Create the cluster:
 1. Navigate to the eks-cluster downloaded folder on your terminal.
+2. Edit terraform.tfvars file and fill in all inputs in the blank form `<>`.
 2. Execute `terraform init` to download all modules.
 3. Execute `terraform apply` to start the cloud resources creation process.
-4. Terraform will ask you for the AWS region you want the cluster to be in.
-5. Terraform will ask you for the cluster name.
-6. Terraform will ask you if you want to connect to the newly created cluster.
+4. Terraform will ask you for some inputs:
+- Which AWS region do you want the EKS cluster be in? (e.g: eu-west-1). You can type any of [AWS available regions list](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions).
+- A name for your new cluster. 
 5. Terraform will ask you `Do you want to perform these actions?` type `yes`.
