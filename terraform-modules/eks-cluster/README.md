@@ -15,3 +15,11 @@ eksctl is an AWS command line tool that lets you execute commands regarding EKS 
 You can do it by 2 means:
 1. Clone this repository to your local machine and navigate to the terraform-modules/eks-cluster folder.
 2. Use download-directory.github.io [link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FQualiTorque%2FTorque-Blueprint-Marketplace%2Ftree%2Fmain%2Fterraform-modules%2Feks-cluster) to download only the relevant folder.
+## Create the cluster:
+1. Navigate to the eks-cluster downloaded folder on your terminal.
+2. Execute `terraform init` to download all modules.
+3. Execute `terraform apply` to start the cloud resources creation process.
+4. Terraform will ask you for the AWS region you want the cluster to be in.
+5. Terraform will ask you for the cluster name.
+6. Terraform will ask you if you want to connect to the newly created cluster.
+5. Terraform will ask you `Do you want to perform these actions?` type `yes`.
