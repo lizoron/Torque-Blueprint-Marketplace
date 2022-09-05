@@ -13,5 +13,5 @@ eksctl is an AWS command line tool that lets you execute commands regarding EKS 
 
 ## Download the EKS cluster terraform module 
 You can do it by 2 means:
-1. clone this repository to your local machine and navigate to the terraform-modules/eks-cluster folder.
+1. Clone this repository to your local machine and navigate to the terraform-modules/eks-cluster folder.
 2. Use download-directory.github.io [link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FQualiTorque%2FTorque-Blueprint-Marketplace%2Ftree%2Fmain%2Fterraform-modules%2Feks-cluster) to download only the relevant folder.
