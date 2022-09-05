@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "cluster_name" {
-  description = "What is the name of the cluster?"
+  description = "Select a name for your new cluster"
 }
 
 variable "install_eksctl" {
