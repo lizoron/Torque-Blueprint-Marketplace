@@ -10,3 +10,8 @@ If you don't have it installed [get it now](https://kubernetes.io/docs/tasks/too
 in order to use the terraform module we provide you will need to configure your AWS account. Although you can do it by several ways we reccommend using the [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 ### eksctl
 eksctl is an AWS command line tool that lets you execute commands regarding EKS cluster. We will need it to add some utility capability to our cluster. If you don't have it installed [get it now](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
+
+## Download the EKS cluster terraform module 
+You can do it by 2 means:
+1. clone this repository to your local machine and navigate to the terraform-modules/eks-cluster folder.
+2. Use download-directory.github.io [link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FQualiTorque%2FTorque-Blueprint-Marketplace%2Ftree%2Fmain%2Fterraform-modules%2Feks-cluster) to download only the relevant folder.
