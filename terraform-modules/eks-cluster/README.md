@@ -3,7 +3,6 @@ This repository contains a terraform module that creates an EKS cluster on your 
 ## Prequisites:
 ### terraform
 terraform is a command line tools that lets you provision resources in the cloud. If you don't have it installed [get it now](https://www.terraform.io/downloads)
-### aws
 ### kubectl 
 kubectl is a command line tool that lets you connect to a Kubernetes cluster, execute commands, and get informed about its state.
 If you don't have it installed [get it now](https://kubernetes.io/docs/tasks/tools/#kubectl)
