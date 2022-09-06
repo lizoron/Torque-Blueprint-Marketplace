@@ -6,8 +6,8 @@ terraform is a command line tools that lets you provision resources in the cloud
 ### kubectl 
 kubectl is a command line tool that lets you connect to a Kubernetes cluster, execute commands, and get informed about its state.
 If you don't have it installed [get it now](https://kubernetes.io/docs/tasks/tools/#kubectl)
-### AWS configured
-in order to use the terraform module we provide you will need to configure your AWS account. Although you can do it by several ways we reccommend using the [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+### aws cli
+in order to use the terraform module we provide you will need to configure your AWS account. Although you can do it by several ways we require using the aws cli in order to connect to the new cluster. If you don't have it [get it now](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 ### Permissions
 Make sure the AWS user you use has enough permissions to create an EKS cluster.
 you can use [this policy json file](https://github.com/QualiTorque/Torque-Blueprint-Marketplace/blob/main/config/eks-cluster-creator/policy.json)
