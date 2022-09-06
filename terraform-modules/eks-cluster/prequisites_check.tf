@@ -1,11 +1,13 @@
 locals{
     python_check_cmd = "python --version"
-    bla_check_cmd = "bla --version"
+    eksctl_check_cmd = "eksctl version"
+    kubectl_check_cmd = "kubectl version --short"
 }
 
 
 resource null_resource "prequisites_check"{
     provisioner "local-exec" {
-        command = local.python_check_cmd
+        when = create
+        command = join(" ; ",[local.python_check_cmd,local.eksctl_check_cmd,local.kubectl_check_cmd])
     }
 }
