@@ -14,10 +14,9 @@ you can use [this policy json file](https://github.com/QualiTorque/Torque-Bluepr
 ### eksctl
 eksctl is an AWS command line tool that lets you execute commands regarding EKS cluster. We will need it to add some utility capability to our cluster. If you don't have it installed [get it now](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
 
-## Download the EKS cluster terraform module 
-You can do it by 2 means:
+## Download the EKS cluster terraform module.You can do it by 2 means:
 1. Clone this repository to your local machine and navigate to the terraform-modules/eks-cluster folder.
-2. Use download-directory.github.io [link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FQualiTorque%2FTorque-Blueprint-Marketplace%2Ftree%2Fmain%2Fterraform-modules%2Feks-cluster) to download only the relevant folder.
+2. Use download-directory.github.io [link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FQualiTorque%2FTorque-Blueprint-Marketplace%2Ftree%2Fmain%2Fterraform-modules%2Feks-cluster) to download a zip file for the folder. create a local `eks-cluster` and extract all files from the zip file there.
 ## Create the cluster:
 1. Navigate to the eks-cluster downloaded folder on your terminal.
 2. Edit terraform.tfvars file and fill in all inputs in the blank form `<>`.
