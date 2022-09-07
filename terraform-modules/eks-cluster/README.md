@@ -5,7 +5,7 @@ This repository contains a terraform module that creates an EKS cluster on your 
 2. kubectl : kubectl is a command line tool that lets you connect to a Kubernetes cluster, execute commands, and get informed about its state. If you don't have it installed [get it now](https://kubernetes.io/docs/tasks/tools/#kubectl)
 3. AWS cli : In order to use the terraform module you will need to install and configure aws cli. If you don't have it [get it now](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 4. eksctl : eksctl is an AWS command line tool that lets you execute commands regarding EKS cluster. We will need it to add some utility capability to our cluster. If you don't have it installed [get it now](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
-5. Python
+5. Python : Python is a popular programming language needed to run scripts the installation uses. If you don't have it installed [get it now](https://www.python.org/downloads/)
 6. AWS Permissions : Make sure the AWS user you use has enough permissions to create an EKS cluster.
 you can use [this policy json file](https://github.com/QualiTorque/Torque-Blueprint-Marketplace/blob/main/config/eks-cluster-creator/policy.json)
 
