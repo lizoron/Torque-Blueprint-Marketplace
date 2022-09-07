@@ -25,6 +25,6 @@ you can use [this policy json file](https://github.com/QualiTorque/Torque-Bluepr
 4. Execute `terraform init` to download all modules.
 5. Execute `terraform apply` to start the cloud resources creation process.
 6. Terraform will ask you for some inputs:
-- Which AWS region do you want the EKS cluster be in? (e.g: eu-west-1). You can type any of [AWS available regions list](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions).
-- A name for your new cluster. 
+   - Which AWS region do you want the EKS cluster be in? (e.g: eu-west-1). You can type any of [AWS available regions list](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions).
+   - A name for your new cluster. 
 7. Terraform will ask you `Do you want to perform these actions?` type `yes`.
