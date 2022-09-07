@@ -1,7 +1,7 @@
 # Provision an EKS Cluster
 This repository contains a terraform module that creates an EKS cluster on your AWS account with everything you need to connect it to Torque.
 ## Prequisites:
-### terraform
+### Terraform
 terraform is a command line tools that lets you provision resources in the cloud. If you don't have it installed [get it now](https://www.terraform.io/downloads)
 ### kubectl 
 kubectl is a command line tool that lets you connect to a Kubernetes cluster, execute commands, and get informed about its state.
