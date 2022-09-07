@@ -11,6 +11,6 @@ variable "install_eksctl" {
   default = "no"
 }
 
-variable "local_connection" {
+variable "connect_to_cluster" {
   description = "Do you want to connect to the newly created cluster? yes | no"
 }
