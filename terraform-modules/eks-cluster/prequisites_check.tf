@@ -9,6 +9,6 @@ locals{
 resource null_resource "prequisites_check"{
     provisioner "local-exec" {
         when = create
-        command = join(" ; ",[local.python_check_cmd,local.eksctl_check_cmd,local.kubectl_check_cmd,local.awscli_check_cmd])
+        command = join(" && ",[local.python_check_cmd,local.eksctl_check_cmd,local.kubectl_check_cmd,local.awscli_check_cmd])
     }
 }
