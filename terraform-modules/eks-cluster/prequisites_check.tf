@@ -1,5 +1,5 @@
 locals{
-    python_check_cmd = "pythonn --version"
+    python_check_cmd = "python --version"
     eksctl_check_cmd = "eksctl version"
     kubectl_check_cmd = "kubectl version --client --short"
     awscli_check_cmd = "aws --version"
