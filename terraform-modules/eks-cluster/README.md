@@ -19,3 +19,6 @@ you can use [this policy json file](https://github.com/QualiTorque/Torque-Bluepr
 4. Execute `terraform init` to download all modules.
 5. Execute `terraform apply` to start the cloud resources creation process.
 6. Terraform will ask you `Do you want to perform these actions?` type `yes`.
+7. Installation will take around ~15 minutes. Continue to connect your cluster to Torque by navigating to the Administration menu --> Agents --> Install agent.
+
+
