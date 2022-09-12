@@ -17,8 +17,13 @@ you can use [this policy json file](https://github.com/QualiTorque/Torque-Bluepr
 2. Navigate to the eks-cluster downloaded folder on your terminal.
 3. Edit terraform.tfvars file and fill in all inputs in the blank form `<>`.
 4. Execute `terraform init` to download all modules.
-5. Execute `terraform apply` to start the cloud resources creation process.
-6. Terraform will ask you `Do you want to perform these actions?` type `yes`.
-7. Installation will take around ~15 minutes. Continue to connect your cluster to Torque by navigating to the Administration menu --> Agents --> Install agent.
+5. Execute `terraform plan` to view the expected installation.
+6. Execute `terraform apply` to start the cloud resources creation process.
+7. Terraform will ask you `Do you want to perform these actions?` type `yes`.
+8. Installation will take around ~15 minutes. Continue to connect your cluster to Torque by navigating to the Administration menu --> Agents --> Install agent.
+
+## Deleting the cluster:
+
+1. Execute `terraform apply --destroy` to teardown the cluster and all sub components.
 
 
