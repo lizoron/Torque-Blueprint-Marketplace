@@ -1,3 +1,11 @@
+locals {
+  oidc_url = module.eks.oidc_provider
+  oidc_url_parts = split("/",local.oidc_url)
+  oidc = element(local.oidc_url_parts,length(local.oidc_url_parts)-1)
+}
+
+
 output "oidc" {
-    value = data.external.get_oidc_script.result["oidc"]
+    value = local.oidc
+    
 }

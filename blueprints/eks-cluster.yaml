@@ -22,6 +22,7 @@ grains:
     spec:
       source:
         path: github.com/qualitorque/tfsamples.git//terraform-modules/eks-cluster
+
       host:
       # Execution Host - the platform where the asset executable will run.
       # For example, a Kubernetes cluster can be used as an execution host.
@@ -30,7 +31,6 @@ grains:
       inputs:
       - aws_region: '{{ .inputs.aws_region }}'
       - cluster_name: '{{ .inputs.cluster_name }}'
-      - install_eksctl: 'yes'
       - connection: 'no'
       outputs:
       - oidc
