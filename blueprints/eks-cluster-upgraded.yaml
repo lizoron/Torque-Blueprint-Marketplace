@@ -21,7 +21,8 @@ grains:
     kind: terraform
     spec:
       source:
-        path: github.com/qualitorque/tfsamples.git//tree/upgraded-eks/terraform-modules/eks-cluster
+        path: github.com/qualitorque/tfsamples.git//terraform-modules/eks-cluster-upgraded
+
       host:
       # Execution Host - the platform where the asset executable will run.
       # For example, a Kubernetes cluster can be used as an execution host.
