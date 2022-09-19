@@ -47,7 +47,8 @@
                 "iam:GetRole",
                 "iam:CreateOpenIDConnectProvider",
                 "iam:GetOpenIDConnectProvider",
-                "kms:CreateKey"
+                "kms:CreateKey",
+                "iam:ListEntitiesForPolicy"
             ],
             "Resource": "*"
         }
