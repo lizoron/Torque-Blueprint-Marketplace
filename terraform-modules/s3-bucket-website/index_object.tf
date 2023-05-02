@@ -16,7 +16,7 @@ resource "aws_s3_object" "index" {
 }
 
 resource "aws_s3_bucket_public_access_block" "acc_bl" {
-  bucket = aws_s3_bucket.bucket.id
+  bucket = aws_s3_bucket.files.id
 
   block_public_acls       = false
   block_public_policy     = false
@@ -25,7 +25,7 @@ resource "aws_s3_bucket_public_access_block" "acc_bl" {
 }
 
 resource "aws_s3_bucket_ownership_controls" "owner_cont" {
-  bucket = aws_s3_bucket.bucket.id
+  bucket = aws_s3_bucket.files.id
 
   rule {
     object_ownership = "BucketOwnerPreferred"
