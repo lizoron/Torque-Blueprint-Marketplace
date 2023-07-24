@@ -1,0 +1,44 @@
+spec_version: 2
+description: blueprint to create a VM on AWS
+# blueprint inputs can be provided by the user, API or CI plugin when creating an environment from this blueprint.
+inputs:
+  host_name:
+    type: execution-host
+  ami:
+  instance_type:
+
+  
+grains:
+  infra:
+    kind: terraform
+    spec:
+      source:
+        path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-infra
+      host:
+        name: '{{ .inputs.host_name }}'
+        service-account: torque-sandbox-creator
+      outputs:
+        - subnets
+        - ec2_key
+        - default_sandbox_security_group
+        - vpc
+    tf-version: 1.2.5
+  vm:
+    kind: terraform
+    depends-on: infra
+    spec:
+      source:
+        path: github.com/qualitorque/tfsamples.git//terraform-modules/sandbox-application
+      host:
+        name: '{{ .inputs.host_name }}'
+        service-account: torque-sandbox-creator
+      inputs:
+        - application_name: "VM"
+        - ami: '{{.inputs.ami}}'
+        - instance_type: '{{.inputs.instance_type}}'
+        - subnets: '{{grains.infra.outputs.subnets}}'
+        - ec2_key: '{{grains.infra.outputs.ec2_key}}'
+        - default_sandbox_security_group: '{{grains.infra.outputs.default_sandbox_security_group}}'
+        - vpc: '{{grains.infra.outputs.vpc}}'
+
+    tf-version: 1.2.5
