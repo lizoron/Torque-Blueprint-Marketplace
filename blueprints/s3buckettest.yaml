@@ -6,7 +6,9 @@ instructions:
 inputs:
   aws_region:
     type: string
-    default: us-west-2
+    allowed-values: [us-west-2, us-east-1, eu-east-1]
+    default: "us-west-2"
+    description: "Region"
   agent:
     type: agent
 # blueprint outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
