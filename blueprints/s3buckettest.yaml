@@ -1,5 +1,5 @@
 spec_version: 2
-description: New test 123
+description: New test 1234
 instructions:
   text: Click Launch, then confirm the agent, aws_region, and relevant tags
 # blueprint inputs can be provided by the user, API or CI plugin when creating an environment from this blueprint.
